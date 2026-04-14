@@ -55,6 +55,8 @@ Le modele cible minimal s'appuie sur les briques Drupal Commerce suivantes :
 
 Le projet ne cree pas de nouvelle entite custom tant que les champs portes par la commande ou la ligne de commande suffisent.
 
+Dans le cadrage actuel, cadeau et justificatif doivent vivre **sur la ligne de commande**.
+
 ## Statuts minimaux
 
 ### Cote commande

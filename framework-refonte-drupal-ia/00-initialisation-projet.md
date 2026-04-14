@@ -93,6 +93,7 @@ Documents sources associes :
 - `decisions/ADR-009-justificatif-achat-controlable.md`
 - `decisions/ADR-010-modele-commerce-minimal.md`
 - `decisions/ADR-011-piste-billetterie-contrib.md`
+- `decisions/ADR-012-donnees-cadeau-et-justificatif-sur-ligne-de-commande.md`
 - `briefs/feature-brief-parcours-offres-vente.md`
 - `pages/page-spec-nos-offres.md`
 - `pages/page-spec-contact.md`
