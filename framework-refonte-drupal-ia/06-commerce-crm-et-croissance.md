@@ -24,6 +24,13 @@ Le modele minimum doit couvrir :
 - preuve d'achat controlee
 - export simple
 
+Base minimale cible :
+
+- offre = produit / variation Commerce ;
+- achat = commande ;
+- cadeau = donnees bornees rattachees a la commande ou a la ligne de commande ;
+- justificatif = identifiant et statut de verification rattaches a l'achat.
+
 ## Bons cadeaux
 
 Sujet a traiter explicitement :

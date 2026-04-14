@@ -73,6 +73,7 @@ Si Commerce est retenu :
 
 - Drupal Commerce
 - produits = prestations / bons cadeaux
+- variations = declinaisons vendables de l'offre
 - promotions / coupons
 - emails transactionnels
 - tableaux de bord commandes / paiements / statuts
