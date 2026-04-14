@@ -44,7 +44,10 @@ Doctrine de base :
 - la source de verite des disponibilites reste cote serveur ;
 - la prevention du double booking est obligatoire ;
 - le besoin doit etre reconstruit dans Drupal, pas reconduit via `JEvents` ;
-- le modele cible doit articuler Commerce et reservation sans surimposer un agenda legacy public.
+- le modele cible doit articuler Commerce et reservation sans surimposer un agenda legacy public ;
+- la selection du creneau est recommandee pendant l'achat, puis confirmee lorsque la commande est placee ;
+- la reservation doit etre portee par la ligne de commande pour rester compatible avec plusieurs achats ;
+- le gestionnaire doit pouvoir reporter une reservation, notamment en fonction des conditions meteo.
 
 ## Bons cadeaux
 

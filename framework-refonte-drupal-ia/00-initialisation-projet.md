@@ -78,6 +78,7 @@ Arbitrages valides a ce stade :
 - oui a **Drupal Commerce**, mais avec un perimetre volontairement sobre ;
 - non a la reconduction de `DT Register` et `JEvents` comme moteurs vivants ;
 - oui a un besoin cible de reservation de creneaux, a reconstruire dans Drupal ;
+- oui a une selection du creneau pendant l'achat, avec rattachement a la ligne de commande ;
 - oui a une page `Nos offres` prioritaire, tres orientee conversion ;
 - oui a une page `Contact` simple, rassurante et exploitable par le gestionnaire ;
 - oui a un socle Drupal minimal, clair et fortement editable.
@@ -99,6 +100,7 @@ Documents sources associes :
 - `decisions/ADR-013-reprise-selective-des-donnees-joomla.md`
 - `decisions/ADR-014-generation-serveur-identifiant-justificatif.md`
 - `decisions/ADR-015-reservation-de-creneaux.md`
+- `decisions/ADR-016-modele-minimal-reservation-de-creneau.md`
 - `briefs/feature-brief-parcours-offres-vente.md`
 - `pages/page-spec-nos-offres.md`
 - `pages/page-spec-contact.md`

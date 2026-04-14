@@ -21,6 +21,7 @@ reading_order:
   - decisions/ADR-013-reprise-selective-des-donnees-joomla.md
   - decisions/ADR-014-generation-serveur-identifiant-justificatif.md
   - decisions/ADR-015-reservation-de-creneaux.md
+  - decisions/ADR-016-modele-minimal-reservation-de-creneau.md
   - briefs/feature-brief-parcours-offres-vente.md
   - pages/page-spec-nos-offres.md
   - pages/page-spec-contact.md
@@ -96,6 +97,9 @@ documents:
   - file: decisions/ADR-015-reservation-de-creneaux.md
     role: decision
     tags: [booking, slots, availability, commerce]
+  - file: decisions/ADR-016-modele-minimal-reservation-de-creneau.md
+    role: decision
+    tags: [booking, slots, order-item, reschedule, weather]
   - file: briefs/feature-brief-parcours-offres-vente.md
     role: feature-brief
     tags: [offers, sales, conversion, commerce]

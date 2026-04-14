@@ -50,6 +50,7 @@ Sorties minimales :
 - page offres
 - tunnel de vente
 - reservation de creneaux
+- reports de reservations
 - formulaires
 - messages transactionnels
 - relances

@@ -47,8 +47,11 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - le parcours doit accepter l'achat en ligne sans exposer de page technique legacy ;
 - le parcours doit rendre explicite la difference entre achat pour soi et achat a offrir ;
 - pour une offre offrable, le premier point de capture retenu est l'ajout au panier, au niveau de la ligne de commande ;
-- le parcours cible doit permettre la selection d'un creneau parmi les disponibilites ouvertes par le gestionnaire ;
+- pour une offre reservable, le parcours cible doit permettre la selection d'un creneau parmi les disponibilites ouvertes par le gestionnaire ;
+- le creneau choisi est rattache a la ligne de commande ;
+- la reservation devient definitive a la commande placee ;
 - un creneau reserve doit devenir indisponible pour une autre commande ;
+- le gestionnaire doit pouvoir reporter une reservation si les conditions, notamment meteo, l'imposent ;
 - le parcours doit produire un justificatif d'achat simple a presenter et difficile a falsifier ;
 - une offre a offrir doit rester rattachee a une vraie commande et a un identifiant unique ;
 - le justificatif doit pouvoir etre controle rapidement cote pilote via une verification serveur ;
@@ -69,6 +72,7 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - prix ;
 - durees ;
 - eligibility cadeau / offre a offrir ;
+- eligibility reservation / offre reservable ;
 - disponibilites / creneaux selon les offres concernees ;
 - destinataire / beneficiaire si achat cadeau ;
 - conditions simples ;

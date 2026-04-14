@@ -32,13 +32,19 @@ Doctrine retenue :
 - le back-office doit permettre au gestionnaire d'ouvrir, fermer et suivre les creneaux ;
 - la reservation doit s'articuler avec la commande et non vivre dans un systeme parallele.
 
-## Questions de cadrage restantes
+## Suite du cadrage
 
-- la reservation se fait-elle au moment de l'achat, apres achat, ou selon le type d'offre ;
-- le creneau est-il porte par la commande ou par la ligne de commande ;
-- faut-il permettre report, annulation ou reaffectation ;
-- toutes les offres sont-elles reservables ou seulement certaines ;
-- faut-il un agenda visible publiquement ou seulement une selection guidee de disponibilites.
+Le premier modele cible detaille est documente dans :
+
+- `ADR-016-modele-minimal-reservation-de-creneau.md`
+
+Il fixe comme direction initiale :
+
+- reservation pendant l'achat ;
+- portage sur la ligne de commande ;
+- offres reservables seulement si elles sont explicitement marquees comme telles ;
+- selection guidee de disponibilites plutot qu'un agenda public generique ;
+- possibilite de report ulterieur par le gestionnaire.
 
 ## Consequences
 

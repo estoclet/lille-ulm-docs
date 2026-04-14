@@ -59,6 +59,14 @@ Le projet ne cree pas de nouvelle entite custom tant que les champs portes par l
 
 Dans le cadrage actuel, cadeau et justificatif doivent vivre **sur la ligne de commande**.
 
+### Reservation de creneau
+
+- ne concerne que les offres explicitement reservables ;
+- selectionnee pendant l'achat ;
+- rattachee a la ligne de commande ;
+- confirmee a la commande placee ;
+- reportable ensuite par le gestionnaire si besoin metier.
+
 ## Statuts minimaux
 
 ### Cote commande
@@ -91,11 +99,12 @@ Dans le cadrage actuel, cadeau et justificatif doivent vivre **sur la ligne de c
 - la commande reste la racine metier ;
 - le cadeau est une propriete d'un achat, pas un monde parallele ;
 - le justificatif est verifie cote serveur, pas par simple inspection visuelle ;
+- la reservation de creneau est une propriete d'un achat reservable, pas d'une commande globale ;
 - tout nouveau custom doit d'abord prouver qu'un champ ou un sous-module Commerce ne suffit pas.
 
 ## Consequences
 
 - l'activation future des sous-modules Commerce devra suivre ce modele ;
 - les premiers types de produits pourront rester peu nombreux ;
-- le back-office gestionnaire pourra se concentrer sur offres, commandes, cadeaux et statuts ;
+- le back-office gestionnaire pourra se concentrer sur offres, commandes, creneaux, cadeaux et statuts ;
 - les futurs travaux d'implementation sauront mieux ou s'arretent les champs et ou commencerait, seulement si necessaire, un petit custom.
