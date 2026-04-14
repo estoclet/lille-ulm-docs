@@ -14,6 +14,7 @@ Faire de `Nos offres` la page commerciale centrale du site et le point d'entree 
 
 - hero avec promesse claire ;
 - grille d'offres ;
+- choix clair entre achat pour soi et achat a offrir ;
 - bloc "ce qui est inclus" ;
 - rassurance paiement / securite ;
 - FAQ courte ;
@@ -23,7 +24,7 @@ Faire de `Nos offres` la page commerciale centrale du site et le point d'entree 
 ## CTA principaux
 
 - acheter cette offre ;
-- offrir un bon cadeau ;
+- offrir cette prestation ;
 - nous appeler pour etre conseille.
 
 ## Champs modifiables par le gestionnaire
@@ -31,6 +32,7 @@ Faire de `Nos offres` la page commerciale centrale du site et le point d'entree 
 - titres ;
 - textes courts ;
 - prix ;
+- disponibilite en carte cadeau ;
 - ordre des offres ;
 - visuels ;
 - CTA ;
@@ -53,12 +55,14 @@ Faire de `Nos offres` la page commerciale centrale du site et le point d'entree 
 ## Variantes autorisees
 
 - mise en avant d'une offre phare ;
+- mise en avant d'une offre "a offrir" ;
 - ordre des offres ajustable ;
 - bloc FAQ affichable ou masquable.
 
 ## Composants relies
 
 - cartes d'offre ;
+- bloc choix "pour soi / pour offrir" ;
 - bloc de reassurance ;
 - bloc FAQ ;
 - bloc contact rapide ;

@@ -7,7 +7,7 @@ Le projet ne vise pas seulement un site vitrine.
 L'activite Lille ULM repose sur :
 
 - des offres a vendre ;
-- des bons cadeaux ;
+- des bons cadeaux / cartes cadeaux ;
 - un besoin de suivi simple des commandes ;
 - un objectif de croissance et de fidelisation.
 
@@ -24,7 +24,8 @@ Retenir **Drupal Commerce**, mais avec un perimetre initial volontairement sobre
 - catalogue d'offres ;
 - commandes ;
 - paiements ;
-- bons cadeaux / codes ;
+- bons cadeaux / cartes cadeaux ;
+- achat pour soi ou pour offrir ;
 - statuts de traitement simples ;
 - fiche client legere.
 
@@ -38,7 +39,7 @@ Le projet ne cherche pas a reproduire un back-office marchand complexe.
 
 ## Consequences
 
-- le modele de donnees doit integrer commandes, clients et bons ;
+- le modele de donnees doit integrer commandes, clients et logiques de cadeau ;
 - la page `Nos offres` devient un vrai point d'entree commercial ;
 - les decisions sur paiement, confirmations et statuts doivent etre specifees tot ;
 - le back-office gestionnaire doit rester rassurant malgre la couche Commerce.

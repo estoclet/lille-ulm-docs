@@ -6,7 +6,7 @@
 
 ## But
 
-Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'achat d'un bon ou d'une prestation.
+Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'achat d'une prestation pour soi ou a offrir.
 
 ## Valeur metier
 
@@ -27,6 +27,7 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - prix et durees ;
 - rassurance ;
 - CTA vers achat ou demande ;
+- possibilite d'acheter une prestation a offrir ;
 - articulation avec paiements et confirmations ;
 - lien vers telephone / contact si besoin.
 
@@ -42,6 +43,7 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - une offre doit etre comprenable sans jargon ;
 - le CTA principal doit etre evident ;
 - le parcours doit accepter l'achat en ligne sans exposer de page technique legacy ;
+- le parcours doit rendre explicite la difference entre achat pour soi et achat a offrir ;
 - le gestionnaire doit pouvoir mettre a jour textes, prix et blocs de rassurance.
 
 ## UI attendue
@@ -57,6 +59,7 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - intitulés d'offres ;
 - prix ;
 - durees ;
+- eligibility cadeau / offre a offrir ;
 - conditions simples ;
 - messages de reassurance ;
 - informations de contact.
