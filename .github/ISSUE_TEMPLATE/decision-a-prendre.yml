@@ -1,0 +1,34 @@
+name: Decision a prendre
+description: Question structurante devant mener a un ADR
+title: "[Decision] "
+labels:
+  - todo
+  - lot:cadre
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question a trancher
+      description: Decision precise a prendre.
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options considerees
+      description: Les options reelles, sans faux choix.
+    validations:
+      required: true
+  - type: textarea
+    id: impacts
+    attributes:
+      label: Impacts
+      description: Effets sur le produit, le build ou le back-office.
+    validations:
+      required: true
+  - type: input
+    id: adr
+    attributes:
+      label: ADR cible
+      description: Fichier ADR attendu si la decision est prise.
+      placeholder: templates/adr-template.md ou docs/adr/...

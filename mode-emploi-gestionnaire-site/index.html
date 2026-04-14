@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mode d'emploi gestionnaire - Lille ULM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Mode d'emploi du gestionnaire du site Lille ULM</h1>
+      <p><strong>URL du site :</strong> <a href="https://www.bapteme-air-lille.fr/">https://www.bapteme-air-lille.fr/</a></p>
+      <p><strong>Version du document :</strong> guide de gestion quotidienne mis a jour le 14/04/2026.</p>
+
+        <div class="meta-grid">
+          <div class="card">
+            <h3>Perimetre couvert</h3>
+            <p>Accueil, contenus, demandes de contact, reservations, suivi des ventes, changement de tarifs, galerie, agenda et ecrans utiles du back-office.</p>
+          </div>
+          <div class="card">
+            <h3>Public vise</h3>
+            <p>Gestionnaire du site, meme sans profil technique : ce manuel explique surtout quoi faire, ou cliquer et quoi controler.</p>
+          </div>
+          <div class="card">
+            <h3>Positionnement</h3>
+            <p>Ce document decrit les gestes quotidiens vraiment utiles, sans jargon inutile, tout en signalant clairement les limites encore presentes.</p>
+          </div>
+        </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="toc">
+          <h2>Sommaire</h2>
+          <ol>
+            <li><a href="#vue-ensemble">Vue d'ensemble du site</a></li>
+            <li><a href="#acces">Acceder au back-office</a></li>
+            <li><a href="#routines">Routines de gestion recommandees</a></li>
+            <li><a href="#contenus">Contenus editoriaux et structure du site</a></li>
+            <li><a href="#contact">Messages de contact avec BreezingForms</a></li>
+            <li><a href="#reservation">Reservations, ventes et tarifs DT Register</a></li>
+            <li><a href="#galerie">Galerie photo</a></li>
+            <li><a href="#agenda">Agenda</a></li>
+            <li><a href="#modules">Modules de la page d'accueil et blocs transverses</a></li>
+            <li><a href="#limites">Limites connues et points de vigilance</a></li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <div class="cards">
+          <div class="card">
+            <h3>Comment lire ce manuel</h3>
+            <p>Chaque action importante suit la meme logique : <strong>ou cliquer</strong>, <strong>ce que vous devez voir</strong>, puis <strong>quoi faire</strong>.</p>
+          </div>
+          <div class="card">
+            <h3>Bloc "Chemin d'acces"</h3>
+            <p>Il indique la suite exacte de clics a faire dans le back-office.</p>
+          </div>
+          <div class="card">
+            <h3>Bloc "Vous etes au bon ecran si..."</h3>
+            <p>Il permet de verifier rapidement que vous n'etes pas sur la mauvaise page.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="vue-ensemble">
+        <h2>1. Vue d'ensemble du site</h2>
+        <p>Le site public est organise autour d'un nombre limite de parcours stables :</p>
+        <ul>
+          <li>une <strong>page d'accueil</strong> avec slider, trois blocs d'appel et acces rapide aux offres ;</li>
+          <li>des <strong>pages editoriales</strong> : Nos tarifs, Location ULM, Nos ULM, FAQ, Mentions legales, Partenaires ;</li>
+          <li>une <strong>page de contact</strong> geree par BreezingForms ;</li>
+          <li>un <strong>parcours de reservation</strong> gere par DT Register ;</li>
+          <li>une <strong>galerie photo</strong> geree par Phoca Gallery ;</li>
+          <li>un <strong>agenda public</strong> servi par JEvents.</li>
+        </ul>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Zone</th>
+              <th>Ce que voit l'utilisateur</th>
+              <th>Composant / source observee</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pages de contenu</td>
+              <td>Pages HTML classiques avec textes, images et CTA</td>
+              <td>Articles Joomla <code>com_content</code></td>
+            </tr>
+            <tr>
+              <td>Contact</td>
+              <td>Formulaire avec nom, email, telephone, objet, message</td>
+              <td>BreezingForms (<code>contact</code>)</td>
+            </tr>
+            <tr>
+              <td>Reservation</td>
+              <td>Liste des offres, tunnel one-page, page de remerciement</td>
+              <td>DT Register</td>
+            </tr>
+            <tr>
+              <td>Galerie</td>
+              <td>Categories photo et miniatures</td>
+              <td>Phoca Gallery</td>
+            </tr>
+            <tr>
+              <td>Agenda</td>
+              <td>Calendrier public</td>
+              <td>JEvents</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <figure>
+          <img src="screenshots/01-accueil.png" alt="Capture de la page d'accueil">
+          <figcaption>Page d'accueil du site : le gestionnaire retrouve ici les blocs d'appel principaux et le reel Facebook dans le bloc Video.</figcaption>
+        </figure>
+      </section>
+
+      <section id="acces">
+        <h2>2. Acceder au back-office</h2>
+        <p>Le back-office Joomla est accessible depuis <code>/administrator/</code>. En production, l'equivalent attendu sera <code>https://www.bapteme-air-lille.fr/administrator/</code>.</p>
+
+        <div class="screen-cue">
+          <strong>Vous etes au bon ecran si...</strong>
+          vous voyez d'abord un fond bleu, deux champs <strong>Identifiant</strong> et <strong>Mot de passe</strong>, puis un grand bouton bleu <strong>Connexion</strong>.
+        </div>
+
+        <ol>
+          <li>Ouvrir l'adresse d'administration.</li>
+          <li>Saisir l'identifiant et le mot de passe du gestionnaire.</li>
+          <li>Cliquer sur le bouton de connexion.</li>
+        </ol>
+
+        <div class="screen-cue">
+          <strong>Apres connexion, vous etes au bon ecran si...</strong>
+          vous voyez en haut les menus <strong>Systeme</strong>, <strong>Utilisateurs</strong>, <strong>Menus</strong>, <strong>Contenu</strong>, <strong>Composants</strong> et <strong>Extensions</strong>.
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Menus principaux visibles</h3>
+            <p>Système, Utilisateurs, Menus, Contenu, Media, Composants, Extensions.</p>
+          </div>
+          <div class="card">
+            <h3>Composants utiles au gestionnaire</h3>
+            <p>BreezingForms Pro, DT Register, JEvents, Phoca Gallery.</p>
+          </div>
+          <div class="card">
+            <h3>Reflexe de prudence</h3>
+            <p>Travaillez de preference depuis les vues de liste. Certaines vues d'edition profondes restent instables sur cette base Joomla 3.</p>
+          </div>
+        </div>
+
+        <figure>
+          <img src="screenshots/26-admin-login.png" alt="Ecran de connexion a l'administration Joomla">
+          <figcaption>Ecran de connexion a l'administration : premier repere visuel avant d'entrer dans le back-office.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="screenshots/10-admin-dashboard.png" alt="Tableau de bord administration Joomla">
+          <figcaption>Tableau de bord d'administration Joomla : point d'entree du gestionnaire.</figcaption>
+        </figure>
+
+        <div class="callout">
+          <strong>Si la connexion echoue :</strong> verifier d'abord l'identifiant, le mot de passe et l'adresse <code>/administrator/</code>. Si l'echec persiste, ne pas multiplier les essais inutilement : demander une verification des acces.
+        </div>
+
+        <h3>Chemins rapides utiles</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Besoin</th>
+              <th>Ou cliquer</th>
+              <th>Ce que vous devez voir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lire les messages recus</td>
+              <td>Composants &gt; BreezingForms Pro &gt; Enregistrements</td>
+              <td>une liste de lignes avec dates et donnees de formulaires</td>
+            </tr>
+            <tr>
+              <td>Voir les ventes</td>
+              <td>Composants &gt; DT Register &gt; Enregistrements</td>
+              <td>la page <em>Enregistrements</em></td>
+            </tr>
+            <tr>
+              <td>Changer un tarif</td>
+              <td>Composants &gt; DT Register &gt; Evenements</td>
+              <td>la liste des prestations</td>
+            </tr>
+            <tr>
+              <td>Retrouver une page de contenu</td>
+              <td>Contenu &gt; Articles</td>
+              <td>la liste des articles du site</td>
+            </tr>
+            <tr>
+              <td>Retrouver un bloc d'accueil</td>
+              <td>Extensions &gt; Modules</td>
+              <td>la liste des modules</td>
+            </tr>
+            <tr>
+              <td>Verifier la galerie</td>
+              <td>Composants &gt; Phoca Gallery</td>
+              <td>le panneau du composant galerie</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="routines">
+        <h2>3. Routines de gestion recommandees</h2>
+        <h3>Chaque jour ou apres une vente</h3>
+        <ol>
+          <li>Verifier que l'accueil, la page contact et <code>/register.html</code> s'affichent correctement.</li>
+          <li>Consulter les ventes et reservations dans <strong>DT Register &gt; Enregistrements</strong>.</li>
+          <li>Consulter les messages recus dans <strong>BreezingForms Pro &gt; Enregistrements</strong>.</li>
+        </ol>
+
+        <h3>Chaque semaine</h3>
+        <ol>
+          <li>Parcourir les pages cle pour detecter un media casse ou un texte obsolete.</li>
+          <li>Verifier les offres publiques DT Register et les tarifs affiches.</li>
+          <li>Verifier que le bloc Video, la carte "Nous trouver" et la galerie restent bien rendus.</li>
+        </ol>
+
+        <h3>Apres un changement de tarif</h3>
+        <ol>
+          <li>Noter le nom exact de la prestation modifiee.</li>
+          <li>Enregistrer la modification dans DT Register.</li>
+          <li>Revenir sur la page publique des offres pour verifier le nouveau prix.</li>
+          <li>Faire une verification rapide du tunnel de reservation jusqu'a l'etape <em>Paiement</em>.</li>
+        </ol>
+
+        <div class="callout warn">
+          <strong>Point important :</strong> plusieurs offres DT Register ont ete remises en service via des dates techniques poussees en 2030. Pour une exploitation metier propre, ces donnees doivent etre pilotees avec vigilance.
+        </div>
+      </section>
+
+      <section id="contenus">
+        <h2>4. Contenus editoriaux et structure du site</h2>
+        <p>Les contenus editoriaux observes dans le back-office sont portes par un petit nombre d'articles Joomla. Parmi les articles publies visibles : <em>Nos offres</em>, <em>Location avion ULM</em>, <em>Nos ULM</em>, <em>FAQ</em>, <em>Mentions legales</em>, <em>Partenaires</em> et deux pages de remerciement.</p>
+
+        <div class="path">
+          <strong>Chemin d'acces</strong>
+          Dans le menu du haut, cliquer sur <strong>Contenu</strong>, puis sur <strong>Articles</strong>.
+        </div>
+
+        <div class="screen-cue">
+          <strong>Vous etes au bon ecran si...</strong>
+          vous voyez un tableau avec les titres des pages du site, par exemple <em>Nos offres</em>, <em>FAQ</em> ou <em>Partenaires</em>.
+        </div>
+
+        <h3>Pages publiques actuellement reperees</h3>
+        <ul>
+          <li>Accueil</li>
+          <li>Nos tarifs / Nos offres</li>
+          <li>Location ULM</li>
+          <li>Nos ULM</li>
+          <li>Galerie photo</li>
+          <li>Nous trouver</li>
+          <li>Nous contacter</li>
+          <li>FAQ</li>
+          <li>Mentions legales</li>
+          <li>Partenaires</li>
+          <li>Plan de site</li>
+          <li>Agenda</li>
+        </ul>
+
+        <figure>
+          <img src="screenshots/11-admin-articles.png" alt="Liste des articles dans l'administration">
+          <figcaption>Vue de liste des articles : c'est la vue la plus fiable pour reperer un contenu a mettre a jour.</figcaption>
+        </figure>
+
+        <ol>
+          <li>Utiliser la liste pour retrouver la bonne page.</li>
+          <li>Verifier d'abord le titre de la page a modifier.</li>
+          <li>Si l'ouverture de la fiche echoue, noter le titre de l'article et faire intervenir un profil technique pour la modification.</li>
+        </ol>
+
+        <div class="callout danger">
+          <strong>Limite actuelle :</strong> sur l'instance observee, l'ouverture directe d'un article en edition peut declencher une erreur PHP legacy. Ce document recense donc le mode operatoire et la limite actuelle, plutot que de promettre une edition back-office totalement stable.
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>5. Messages de contact avec BreezingForms</h2>
+        <p>La page <code>Nous contacter</code> n'utilise pas le composant de contact Joomla natif mais un formulaire BreezingForms nomme <code>contact</code>.</p>
+
+        <div class="path">
+          <strong>Chemin d'acces</strong>
+          Cliquer sur <strong>Composants</strong> &gt; <strong>BreezingForms Pro</strong> &gt; <strong>Enregistrements</strong>.
+        </div>
+
+        <div class="screen-cue">
+          <strong>Vous etes au bon ecran si...</strong>
+          vous voyez une liste d'enregistrements de formulaires, avec des dates, des identifiants et des lignes de saisie.
+        </div>
+
+        <h3>Ce que fait le gestionnaire</h3>
+        <ol>
+          <li>Verifie que la page contact charge bien et que les champs sont visibles.</li>
+          <li>Consulte les enregistrements dans <strong>Composants &gt; BreezingForms Pro &gt; Enregistrements</strong>.</li>
+          <li>Filtre si necessaire par date, IP, identifiant ou formulaire.</li>
+        </ol>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Formulaire repere</h3>
+            <p><code>contact</code> (1 page)</p>
+          </div>
+          <div class="card">
+            <h3>Volume observe</h3>
+            <p>Le composant contient deja de nombreux enregistrements : il est utile d'utiliser les filtres pour retrouver rapidement un message.</p>
+          </div>
+          <div class="card">
+            <h3>Champ important</h3>
+            <p>Le formulaire de contact est protege par un controle anti-spam. Si le formulaire n'est plus envoyable, il faut le faire verifier.</p>
+          </div>
+        </div>
+
+        <figure>
+          <img src="screenshots/02-contact.png" alt="Formulaire de contact">
+          <figcaption>Page contact cote public.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="screenshots/13-breezing-records.png" alt="Enregistrements BreezingForms">
+          <figcaption>Liste des enregistrements BreezingForms : point de controle principal pour suivre les demandes envoyees.</figcaption>
+        </figure>
+      </section>
+
+      <section id="reservation">
+        <h2>6. Reservations, ventes et tarifs DT Register</h2>
+        <p>Le composant <strong>DT Register</strong> gere les offres commerciales, les reservations et le suivi des ventes. Pour le gestionnaire, c'est le point central des baptemes de l'air et prestations vendues sur le site.</p>
+
+        <div class="path">
+          <strong>Chemin d'acces general</strong>
+          Cliquer sur <strong>Composants</strong> &gt; <strong>DT Register</strong>. Ensuite, choisir dans le menu du composant : <strong>Enregistrements</strong>, <strong>Evenements</strong> ou <strong>Exportation CSV</strong> selon l'action a faire.
+        </div>
+
+        <div class="screen-cue">
+          <strong>Vous etes au bon ecran si...</strong>
+          le haut de page affiche clairement l'un de ces titres : <em>Enregistrements</em>, <em>Gestion des evenements</em> ou <em>Exportation CSV</em>.
+        </div>
+
+        <h3>Offres actuellement visibles sur le site</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Prestation</th>
+              <th>Tarif observe</th>
+              <th>Repere utile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bapteme de l'air - seance de 15 min</td>
+              <td>49,90 EUR</td>
+              <td>offre d'entree</td>
+            </tr>
+            <tr>
+              <td>Bapteme de l'air - seance de 30 min</td>
+              <td>99,90 EUR</td>
+              <td>offre courte</td>
+            </tr>
+            <tr>
+              <td>Cours de pilotage - seance de 45 min</td>
+              <td>145,00 EUR</td>
+              <td>cours</td>
+            </tr>
+            <tr>
+              <td>Bapteme de l'air - seance de 1 heure</td>
+              <td>179,90 EUR</td>
+              <td>offre longue</td>
+            </tr>
+            <tr>
+              <td>Bapteme de l'air - seance de 1h30</td>
+              <td>249,90 EUR</td>
+              <td>offre premium</td>
+            </tr>
+            <tr>
+              <td>6 lecons de pilotage de 40 mn</td>
+              <td>590,00 EUR</td>
+              <td>forfait</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Verifier qu'une reservation fonctionne</h3>
+        <ol>
+          <li>Ouvrir la page publique <code>/register.html</code>.</li>
+          <li>Verifier que les offres sont bien listees.</li>
+          <li>Ouvrir une offre et verifier que le formulaire client s'affiche.</li>
+          <li>Verifier que le parcours affiche bien ses etapes principales : <em>S'inscrire</em>, <em>Billing</em>, <em>Details</em> puis <em>Paiement</em>.</li>
+          <li>En cas de test complet, verifier que la reservation se termine sur la page <code>/remerciement.html</code>.</li>
+        </ol>
+
+        <figure>
+          <img src="screenshots/03-register.png" alt="Liste des offres DT Register">
+          <figcaption>Page publique de reservation : le gestionnaire doit surtout verifier que les offres et leurs boutons d'acces restent visibles.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="screenshots/04-remerciement.png" alt="Page de remerciement apres reservation">
+          <figcaption>La page de remerciement confirme qu'un parcours de reservation va jusqu'au bout.</figcaption>
+        </figure>
+
+        <h3>Suivre les ventes et les reservations</h3>
+        <div class="path">
+          <strong>Ou cliquer</strong>
+          <strong>Composants</strong> &gt; <strong>DT Register</strong> &gt; <strong>Enregistrements</strong>
+        </div>
+
+        <div class="screen-cue">
+          <strong>Vous etes au bon ecran si...</strong>
+          le titre de la page est <em>Enregistrements</em> et que vous voyez des filtres par evenement, date ou statut.
+        </div>
+
+        <ol>
+          <li>Dans le back-office, ouvrir <strong>Composants &gt; DT Register &gt; Enregistrements</strong>.</li>
+          <li>Filtrer si besoin par evenement, date ou statut.</li>
+          <li>Pour chaque vente, reperer au minimum : la prestation achetee, la date d'enregistrement, le numero de confirmation et le mode de reglement.</li>
+          <li>Les reglements les plus frequents sont <em>Paypal</em> et le reglement hors ligne <em>Cheque ou virement</em>.</li>
+          <li>Si le reglement est de type <em>Cheque ou virement</em>, prevoir un suivi en dehors du site jusqu'a encaissement effectif.</li>
+          <li>Utiliser <strong>Exportation CSV</strong> si vous devez transmettre la liste des reservations ou preparer un suivi comptable.</li>
+        </ol>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Ou voir les ventes</h3>
+            <p><strong>DT Register &gt; Enregistrements</strong></p>
+          </div>
+          <div class="card">
+            <h3>Ce qu'il faut noter</h3>
+            <p>Prestation, date, numero de confirmation, mode de reglement, nom du client.</p>
+          </div>
+          <div class="card">
+            <h3>Quand agir</h3>
+            <p>En priorite sur les reglements hors ligne, les demandes urgentes et les exports a transmettre.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Traitement simple d'une vente :</strong> identifier la prestation, verifier le mode de reglement, puis decider si le dossier est deja regle en ligne ou s'il faut attendre un cheque ou un virement. Le back-office sert surtout a voir, filtrer et exporter ; le suivi d'encaissement hors ligne se fait ensuite avec votre organisation habituelle.
+        </div>
+
+        <figure>
+          <img src="screenshots/18-dtregister-sales.png" alt="Liste des ventes et reservations dans DT Register">
+          <figcaption>Vue <em>Enregistrements</em> : c'est l'ecran principal de suivi des ventes et des reservations.</figcaption>
+        </figure>
+
+        <div class="path">
+          <strong>Ou cliquer pour exporter</strong>
+          <strong>Composants</strong> &gt; <strong>DT Register</strong> &gt; <strong>Exportation CSV</strong>
+        </div>
+
+        <div class="screen-cue">
+          <strong>Vous etes au bon ecran si...</strong>
+          vous voyez un texte d'explication demandant de choisir un evenement avant de passer a l'etape suivante.
+        </div>
+
+        <figure>
+          <img src="screenshots/21-dtregister-export.png" alt="Export CSV DT Register">
+          <figcaption>Vue <em>Exportation CSV</em> : utile pour sortir une liste de reservations par prestation.</figcaption>
+        </figure>
+
+        <h3>Changer un tarif</h3>
+        <div class="path">
+          <strong>Ou cliquer</strong>
+          <strong>Composants</strong> &gt; <strong>DT Register</strong> &gt; <strong>Evenements</strong>, puis cliquer sur le nom de la prestation a modifier.
+        </div>
+
+        <div class="screen-cue">
+          <strong>Vous etes au bon ecran si...</strong>
+          vous arrivez d'abord sur une liste de prestations, puis sur une fiche avec des onglets comme <em>General</em>, <em>Remises et Frais</em>, <em>Messages</em> et <em>Emails</em>.
+        </div>
+
+        <ol>
+          <li>Ouvrir <strong>Composants &gt; DT Register &gt; Evenements</strong>.</li>
+          <li>Reperez la prestation a modifier.</li>
+          <li>Ouvrir la fiche de la prestation, puis l'onglet <strong>Remises et Frais</strong>.</li>
+          <li>Modifier le montant principal de la prestation.</li>
+          <li>Enregistrer puis verifier le resultat sur la page publique des offres.</li>
+        </ol>
+
+        <p>Pour une modification simple de prix, commencez toujours par la fiche de l'evenement. Les ecrans <em>Options de Paiement</em> et <em>Frais de Facturation</em> servent plutot a des regles complementaires qu'a une hausse ou baisse courante du tarif.</p>
+
+        <div class="callout">
+          <strong>Repere utile :</strong> sur cette configuration, l'option de paiement hors ligne visible au client correspond a <em>Cheque ou virement</em>. Un changement de tarif ne doit pas modifier ce mode de reglement si votre objectif est seulement de mettre a jour le prix.
+        </div>
+
+        <figure>
+          <img src="screenshots/19-dtregister-events.png" alt="Liste des prestations DT Register">
+          <figcaption>Vue <em>Evenements</em> : point d'entree pour retrouver une prestation et l'ouvrir.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="screenshots/25-dtregister-pricing-tab.png" alt="Onglet de tarification d'une prestation DT Register">
+          <figcaption>Onglet <em>Remises et Frais</em> : c'est ici que le gestionnaire doit intervenir pour une mise a jour de tarif.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="screenshots/15-dtregister-panel.png" alt="Panneau DT Register dans l'administration">
+          <figcaption>Panneau de controle DT Register : il regroupe les acces utiles pour les ventes, les prestations et les exports.</figcaption>
+        </figure>
+
+        <div class="callout warn">
+          <strong>Point de vigilance gestionnaire :</strong> changer un seul tarif a la fois, enregistrer, puis verifier la page publique correspondante. Cela limite les erreurs et facilite le retour arriere si besoin.
+        </div>
+      </section>
+
+      <section id="galerie">
+        <h2>7. Galerie photo</h2>
+        <p>La galerie publique repose sur Phoca Gallery. Quatre categories publiees ont ete reperees :</p>
+
+        <div class="path">
+          <strong>Chemin d'acces</strong>
+          Cliquer sur <strong>Composants</strong> &gt; <strong>Phoca Gallery</strong>.
+        </div>
+
+        <div class="screen-cue">
+          <strong>Vous etes au bon ecran si...</strong>
+          vous arrivez sur le panneau de Phoca Gallery avec les entrees permettant d'aller vers les categories ou les images.
+        </div>
+
+        <ul>
+          <li>Nos ULM</li>
+          <li>Le pilote</li>
+          <li>En direct du cockpit</li>
+          <li>Bonus : un atterrissage comme si vous y etiez !</li>
+        </ul>
+
+        <p>Le panneau d'administration du composant est accessible, ce qui permet au gestionnaire de confirmer la presence de la galerie et de retrouver ou intervenir si un album doit etre verifie.</p>
+
+        <figure>
+          <img src="screenshots/16-phocagallery-panel.png" alt="Panneau Phoca Gallery">
+          <figcaption>Panneau de controle Phoca Gallery observe dans le back-office.</figcaption>
+        </figure>
+
+        <ol>
+          <li>Entrer d'abord dans le composant galerie.</li>
+          <li>Retrouver ensuite la categorie ou l'image a verifier.</li>
+          <li>Commencer par du controle visuel avant toute modification plus fine.</li>
+        </ol>
+      </section>
+
+      <section id="agenda">
+        <h2>8. Agenda</h2>
+        <p>L'agenda public est accessible depuis le menu. Il est gere par JEvents. Le composant ouvre maintenant un tableau de bord plus riche, avec compteurs et alertes de configuration.</p>
+
+        <div class="path">
+          <strong>Chemin d'acces</strong>
+          Cliquer sur <strong>Composants</strong> &gt; <strong>JEvents</strong>.
+        </div>
+
+        <div class="screen-cue">
+          <strong>Vous etes au bon ecran si...</strong>
+          vous voyez le titre <strong>JEvents Dashboard</strong>, des compteurs comme <em>0 Future Events</em> et, si besoin, une alerte de configuration.
+        </div>
+
+        <ul>
+          <li>Le lien public <code>/agenda</code> repond en front.</li>
+          <li>Le composant JEvents est present en administration.</li>
+          <li>Le dashboard observe annonce <code>0 Future Events</code>, ce qui signifie qu'un controle fonctionnel du calendrier est necessaire si l'agenda doit redevenir un vrai outil d'animation.</li>
+          <li>Le composant affiche aussi une alerte indiquant que les calendriers ne sont pas encore correctement configures.</li>
+        </ul>
+
+        <figure>
+          <img src="screenshots/27-jevents-dashboard.png" alt="Tableau de bord JEvents">
+          <figcaption>Tableau de bord JEvents : il affiche maintenant ses compteurs, ses alertes et les actions de configuration associees.</figcaption>
+        </figure>
+      </section>
+
+      <section id="modules">
+        <h2>9. Modules de la page d'accueil et blocs transverses</h2>
+        <p>Les modules publics publies les plus visibles pour le gestionnaire sont :</p>
+
+        <div class="path">
+          <strong>Chemin d'acces</strong>
+          Cliquer sur <strong>Extensions</strong> &gt; <strong>Modules</strong>.
+        </div>
+
+        <div class="screen-cue">
+          <strong>Vous etes au bon ecran si...</strong>
+          vous voyez une liste de blocs du site, avec des noms comme <em>Consulter nos tarifs</em>, <em>Video</em> ou <em>Nous trouver</em>.
+        </div>
+
+        <ul>
+          <li><strong>Consulter nos tarifs</strong></li>
+          <li><strong>Video</strong></li>
+          <li><strong>Paiement securise en ligne</strong></li>
+          <li><strong>Nous trouver</strong> (module wrapper / embed)</li>
+          <li><strong>Menu principal</strong> et <strong>Menu secondaire</strong></li>
+        </ul>
+
+        <figure>
+          <img src="screenshots/12-admin-modules.png" alt="Liste des modules Joomla">
+          <figcaption>Liste des modules publies cote site, utile pour identifier rapidement un bloc d'accueil ou de pied de page.</figcaption>
+        </figure>
+
+        <p>Le bloc <em>Video</em> repose aujourd'hui sur un wrapper avec un embed Facebook. Le bloc <em>Nous trouver</em> repose egalement sur un wrapper, probablement pour la carte embarquee.</p>
+
+        <ol>
+          <li>Utiliser cette liste pour retrouver le bloc d'accueil a controler.</li>
+          <li>Verifier d'abord le nom du module avant toute action.</li>
+          <li>Si l'ouverture de la fiche echoue, garder le nom exact du module pour demander une intervention technique.</li>
+        </ol>
+      </section>
+
+      <section id="limites">
+        <h2>10. Limites connues et points de vigilance</h2>
+        <div class="cards">
+          <div class="card">
+            <span class="badge danger">Limite legacy</span>
+            <h3>Edition admin profonde instable</h3>
+            <p>L'edition d'article et de module peut encore echouer. En revanche, la fiche d'un menu et la fiche d'une prestation DT Register sont plus exploitables.</p>
+          </div>
+          <div class="card">
+            <span class="badge warn">Vigilance metier</span>
+            <h3>Offres DT Register</h3>
+            <p>Les offres ont ete remises en service et doivent etre surveillees regulierement : affichage public, prix, page de fin et mode de reglement.</p>
+          </div>
+          <div class="card">
+            <span class="badge warn">Vigilance UX</span>
+            <h3>Pages vieillissantes</h3>
+            <p>FAQ, Mentions legales, Partenaires et plusieurs ecrans annexes restent datés visuellement et editorialement.</p>
+          </div>
+        </div>
+
+        <figure>
+          <img src="screenshots/17-article-edit-error.png" alt="Erreur observee en edition d'article">
+          <figcaption>Exemple de limite actuelle : ouverture directe d'une fiche article en edition.</figcaption>
+        </figure>
+
+        <div class="callout">
+          <strong>Usage recommande :</strong> pour l'instant, utiliser ce manuel comme guide d'exploitation et de controle. Si un ecran profond bloque, noter le nom exact de la page ou du module concerne, prendre une capture si possible, puis transmettre ces elements pour intervention.
+        </div>
+
+        <div class="callout warn">
+          <strong>Synthese factuelle en faveur d'une refonte :</strong> le site reste appuye sur un socle Joomla 3 ancien, plusieurs ecrans d'edition profonds restent instables, le tunnel de vente `DT Register` a ete remis en service par des correctifs conservatoires et des dates techniques poussees jusqu'en 2030, et plusieurs pages publiques restent vieillissantes. Autrement dit, le site peut de nouveau etre exploite au quotidien, mais il repose encore sur un ensemble fragile qui justifie une refonte a moyen terme.
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Document genere dans <code>lille-ulm-docs/mode-emploi-gestionnaire-site/</code>. Il est volontairement au format HTML pour faciliter la lecture, l'impression et les enrichissements iteratifs avec captures d'ecran.</p>
+    </footer>
+  </div>
+</body>
+</html>

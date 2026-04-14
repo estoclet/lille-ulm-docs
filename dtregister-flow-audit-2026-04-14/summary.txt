@@ -1,0 +1,8 @@
+register_list_url=http://lille-ulm.ddev.site/register.html?task=register.register&eventId=11
+onepage_url=http://lille-ulm.ddev.site/register.html?task=register.register&eventId=10
+after_next_url=http://lille-ulm.ddev.site/register.html?task=register.register&eventId=10
+marker=Merci
+marker=confirmation
+marker=Paylater
+message=× Groupe complet
+message=Are you sure you want to continue ?

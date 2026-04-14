@@ -1,0 +1,41 @@
+name: Ticket client
+description: Ticket visible sur la page client
+title: "[Client] "
+labels:
+  - client
+  - todo
+body:
+  - type: textarea
+    id: but
+    attributes:
+      label: But
+      description: En une phrase, ce que le ticket doit produire.
+    validations:
+      required: true
+  - type: textarea
+    id: valeur
+    attributes:
+      label: Valeur client ou metier
+      description: Pourquoi ce sujet compte.
+    validations:
+      required: true
+  - type: textarea
+    id: definition-of-done
+    attributes:
+      label: Definition of done
+      description: Comment saura-t-on que le ticket est termine.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Document source
+      description: Brief, ADR, page spec ou autre source de verite.
+      placeholder: framework-refonte-drupal-ia/...
+  - type: markdown
+    attributes:
+      value: |
+        Pense a ajouter ensuite :
+        - un label `lot:*`
+        - un label `prio:*`
+        - `in-progress` ou `blocked` quand le statut change

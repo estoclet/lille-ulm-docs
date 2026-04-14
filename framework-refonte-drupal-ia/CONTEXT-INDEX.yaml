@@ -1,0 +1,75 @@
+version: 1
+name: framework-refonte-drupal-ia
+purpose: >
+  Cadre documentaire compact pour une refonte Drupal assistee par IA,
+  optimise pour des agents qui lisent mal les dossiers trop gros ou trop diffus.
+
+reading_order:
+  - 00-initialisation-projet.md
+  - 01-principes-et-perimetre.md
+  - 02-regles-de-decoupage-pour-ia.md
+  - 03-gouvernance-produit-projet.md
+  - 04-architecture-drupal-cible.md
+  - 05-backoffice-gestionnaire.md
+  - 06-commerce-crm-et-croissance.md
+  - 07-orchestration-claude-codex-copilot.md
+  - 08-plan-de-lots.md
+  - 09-gouvernance-ia-friendly.md
+
+file_budgets:
+  target_lines: 120
+  soft_max_lines: 140
+  hard_max_lines: 180
+
+ai_guardrails:
+  no_silent_invention: true
+  require_source_of_truth: true
+  require_split_over_hard_max: true
+  one_fact_one_home: true
+  mark_hypotheses_explicitly: true
+  smallest_possible_edit: true
+
+documents:
+  - file: 00-initialisation-projet.md
+    role: kickoff
+    tags: [existing-site, baseline, priorities, discovery]
+  - file: 01-principes-et-perimetre.md
+    role: vision
+    tags: [vision, scope, drupal, commerce, ux]
+  - file: 02-regles-de-decoupage-pour-ia.md
+    role: ai-rules
+    tags: [ia, chunking, tasks, context]
+  - file: 03-gouvernance-produit-projet.md
+    role: delivery
+    tags: [project, governance, rituals, artifacts]
+  - file: 04-architecture-drupal-cible.md
+    role: architecture
+    tags: [drupal, modules, layout-builder, ui-suite]
+  - file: 05-backoffice-gestionnaire.md
+    role: editorial-ux
+    tags: [backoffice, editor, simplicity, training]
+  - file: 06-commerce-crm-et-croissance.md
+    role: business
+    tags: [commerce, crm, loyalty, growth]
+  - file: 07-orchestration-claude-codex-copilot.md
+    role: ai-ops
+    tags: [claude, codex, copilot, handoff]
+  - file: 08-plan-de-lots.md
+    role: roadmap
+    tags: [workstreams, phases, milestones]
+  - file: 09-gouvernance-ia-friendly.md
+    role: governance
+    tags: [guardrails, anti-hallucination, source-of-truth, maintenance]
+
+templates:
+  - templates/adr-template.md
+  - templates/feature-brief-template.md
+  - templates/page-spec-template.md
+  - templates/agent-task-pack-template.md
+
+source_of_truth:
+  current_state: 00-initialisation-projet.md
+  decisions: templates/adr-template.md
+  feature_scope: templates/feature-brief-template.md
+  page_behavior: templates/page-spec-template.md
+  agent_execution: templates/agent-task-pack-template.md
