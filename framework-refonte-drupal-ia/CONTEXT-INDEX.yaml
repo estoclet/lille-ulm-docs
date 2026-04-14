@@ -8,6 +8,7 @@ reading_order:
   - 00-initialisation-projet.md
   - decisions/ADR-001-commerce-sobre.md
   - decisions/ADR-002-legacy-dtregister-jevents.md
+  - decisions/ADR-003-socle-applicatif-ddev.md
   - briefs/feature-brief-parcours-offres-vente.md
   - pages/page-spec-nos-offres.md
   - pages/page-spec-contact.md
@@ -44,6 +45,9 @@ documents:
   - file: decisions/ADR-002-legacy-dtregister-jevents.md
     role: decision
     tags: [legacy, migration, dtregister, jevents]
+  - file: decisions/ADR-003-socle-applicatif-ddev.md
+    role: decision
+    tags: [ddev, drupal11, scaffold, low-code, repository]
   - file: briefs/feature-brief-parcours-offres-vente.md
     role: feature-brief
     tags: [offers, sales, conversion, commerce]
