@@ -21,6 +21,7 @@ Le modele minimum doit couvrir :
 - paiements
 - coupons / promotions
 - statuts de traitement
+- preuve d'achat controlee
 - export simple
 
 ## Bons cadeaux
@@ -34,6 +35,17 @@ Sujet a traiter explicitement :
 - annulation / remboursement ;
 - suivi d'utilisation ;
 - relance avant expiration.
+
+## Justificatif terrain
+
+Sujet a traiter explicitement :
+
+- format de justificatif remis apres achat ;
+- identifiant unique difficilement falsifiable ;
+- controle simple et rapide par le pilote ;
+- preuve scannable si pertinent (ex : QR code) ;
+- statut apres controle ou consommation ;
+- gestion des cas deja utilise / invalide / annule.
 
 ## CRM raisonnable
 

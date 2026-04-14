@@ -26,6 +26,7 @@ Retenir **Drupal Commerce**, mais avec un perimetre initial volontairement sobre
 - paiements ;
 - bons cadeaux / cartes cadeaux ;
 - achat pour soi ou pour offrir ;
+- justificatif d'achat verifiable ;
 - statuts de traitement simples ;
 - fiche client legere.
 
@@ -40,6 +41,7 @@ Le projet ne cherche pas a reproduire un back-office marchand complexe.
 ## Consequences
 
 - le modele de donnees doit integrer commandes, clients et logiques de cadeau ;
+- le modele de donnees doit aussi prevoir un justificatif de vente controlable sans ambiguite ;
 - la page `Nos offres` devient un vrai point d'entree commercial ;
 - les decisions sur paiement, confirmations et statuts doivent etre specifees tot ;
 - le back-office gestionnaire doit rester rassurant malgre la couche Commerce.

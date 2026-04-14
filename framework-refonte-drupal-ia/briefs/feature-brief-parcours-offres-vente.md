@@ -29,6 +29,7 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - CTA vers achat ou demande ;
 - possibilite d'acheter une prestation a offrir ;
 - articulation avec paiements et confirmations ;
+- preuve d'achat facilement presentable le jour de la prestation ;
 - lien vers telephone / contact si besoin.
 
 ## Perimetre out
@@ -44,6 +45,7 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - le CTA principal doit etre evident ;
 - le parcours doit accepter l'achat en ligne sans exposer de page technique legacy ;
 - le parcours doit rendre explicite la difference entre achat pour soi et achat a offrir ;
+- le parcours doit produire un justificatif d'achat simple a presenter et difficile a falsifier ;
 - le gestionnaire doit pouvoir mettre a jour textes, prix et blocs de rassurance.
 
 ## UI attendue
@@ -62,6 +64,7 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - eligibility cadeau / offre a offrir ;
 - conditions simples ;
 - messages de reassurance ;
+- mode de justification / controle le jour J ;
 - informations de contact.
 
 ## Definition of done
