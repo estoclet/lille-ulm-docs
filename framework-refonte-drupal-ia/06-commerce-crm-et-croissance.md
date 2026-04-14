@@ -54,6 +54,13 @@ Sujet a traiter explicitement :
 - statut apres controle ou consommation ;
 - gestion des cas deja utilise / invalide / annule.
 
+Doctrine de base :
+
+- la source de verite doit rester cote serveur ;
+- le QR code est privilegie comme acces rapide au controle, pas comme preuve autonome ;
+- le pilote doit voir un statut tres simple ;
+- la verification doit pouvoir marquer l'usage ou la consommation.
+
 ## CRM raisonnable
 
 Eviter de transformer Drupal en monstre.

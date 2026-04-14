@@ -90,6 +90,7 @@ Documents sources associes :
 - `decisions/ADR-006-aide-gestionnaire-backoffice.md`
 - `decisions/ADR-007-composition-editoriale-low-code.md`
 - `decisions/ADR-008-logique-prestations-a-offrir.md`
+- `decisions/ADR-009-justificatif-achat-controlable.md`
 - `briefs/feature-brief-parcours-offres-vente.md`
 - `pages/page-spec-nos-offres.md`
 - `pages/page-spec-contact.md`

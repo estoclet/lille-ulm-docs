@@ -47,6 +47,7 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - le parcours doit rendre explicite la difference entre achat pour soi et achat a offrir ;
 - le parcours doit produire un justificatif d'achat simple a presenter et difficile a falsifier ;
 - une offre a offrir doit rester rattachee a une vraie commande et a un identifiant unique ;
+- le justificatif doit pouvoir etre controle rapidement cote pilote via une verification serveur ;
 - le gestionnaire doit pouvoir mettre a jour textes, prix et blocs de rassurance.
 
 ## UI attendue
