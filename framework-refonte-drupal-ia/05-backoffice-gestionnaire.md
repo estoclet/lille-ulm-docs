@@ -43,6 +43,43 @@ Le gestionnaire ne doit pas voir "Drupal brut". Il doit voir :
 - dev ;
 - maintenance.
 
+## Moment de creation du role gestionnaire
+
+Le role `gestionnaire` doit etre cree :
+
+1. juste apres l'installation Drupal ;
+2. apres l'activation du socle admin utile ;
+3. avant la construction des premieres fonctionnalites metier.
+
+Il ne faut pas attendre la fin du projet.
+
+Sinon :
+
+- les parcours sont testes avec un compte trop puissant ;
+- les permissions deviennent un rattrapage tardif ;
+- la documentation gestionnaire ne colle plus au reel.
+
+## Strategie de permissions
+
+Le role `gestionnaire` doit partir avec des droits minimaux.
+
+Puis, a chaque nouvelle fonctionnalite :
+
+1. ajouter seulement les permissions necessaires ;
+2. tester le parcours avec un compte `gestionnaire` ;
+3. documenter ce que le gestionnaire peut faire ;
+4. eviter les permissions trop larges "en attendant".
+
+## Compte de test
+
+Le projet doit maintenir un vrai compte de test `gestionnaire`.
+
+Ce compte sert a :
+
+- valider les ecrans visibles ;
+- verifier le vocabulaire du back-office ;
+- controler que la documentation embarquee correspond aux permissions reelles.
+
 ## Principes UX admin
 
 1. un menu court ;
