@@ -88,6 +88,7 @@ Documents sources associes :
 - `decisions/ADR-004-configuration-exportable-et-seed-content.md`
 - `decisions/ADR-005-doctrine-seed-content-initial.md`
 - `decisions/ADR-006-aide-gestionnaire-backoffice.md`
+- `decisions/ADR-007-composition-editoriale-low-code.md`
 - `briefs/feature-brief-parcours-offres-vente.md`
 - `pages/page-spec-nos-offres.md`
 - `pages/page-spec-contact.md`

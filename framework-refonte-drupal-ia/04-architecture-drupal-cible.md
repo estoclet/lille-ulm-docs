@@ -29,8 +29,8 @@ Le projet ne doit pas dependre d'une installation locale artisanale propre a un 
 ### Choix principal
 
 - **Layout Builder** comme systeme de composition principal
-- **UI Suite** pour fournir une bibliotheque de composants et de layouts coherents
-- **Single Directory Components** pour stabiliser les composants
+- **Single Directory Components** comme base de composants reutilisables
+- **UI Suite** seulement si un vrai besoin ulterieur de bibliotheque contrib se confirme
 
 ### Regle
 
@@ -45,7 +45,8 @@ Sans doctrine claire.
 Doctrine recommandee :
 
 - Layout Builder pour les pages ;
-- composants UI Suite / SDC pour les blocs reutilisables ;
+- composants SDC pour les blocs reutilisables ;
+- UI Suite seulement si elle apporte une vraie valeur supplementaire ;
 - Paragraphs seulement si un contenu imbrique repetable le justifie vraiment.
 
 ## Drupal Commerce : decision

@@ -12,6 +12,7 @@ reading_order:
   - decisions/ADR-004-configuration-exportable-et-seed-content.md
   - decisions/ADR-005-doctrine-seed-content-initial.md
   - decisions/ADR-006-aide-gestionnaire-backoffice.md
+  - decisions/ADR-007-composition-editoriale-low-code.md
   - briefs/feature-brief-parcours-offres-vente.md
   - pages/page-spec-nos-offres.md
   - pages/page-spec-contact.md
@@ -60,6 +61,9 @@ documents:
   - file: decisions/ADR-006-aide-gestionnaire-backoffice.md
     role: decision
     tags: [help, backoffice, gestionnaire, low-code]
+  - file: decisions/ADR-007-composition-editoriale-low-code.md
+    role: decision
+    tags: [layout-builder, sdc, composition, low-code]
   - file: briefs/feature-brief-parcours-offres-vente.md
     role: feature-brief
     tags: [offers, sales, conversion, commerce]
