@@ -46,6 +46,7 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - le parcours doit accepter l'achat en ligne sans exposer de page technique legacy ;
 - le parcours doit rendre explicite la difference entre achat pour soi et achat a offrir ;
 - le parcours doit produire un justificatif d'achat simple a presenter et difficile a falsifier ;
+- une offre a offrir doit rester rattachee a une vraie commande et a un identifiant unique ;
 - le gestionnaire doit pouvoir mettre a jour textes, prix et blocs de rassurance.
 
 ## UI attendue
@@ -62,6 +63,7 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - prix ;
 - durees ;
 - eligibility cadeau / offre a offrir ;
+- destinataire / beneficiaire si achat cadeau ;
 - conditions simples ;
 - messages de reassurance ;
 - mode de justification / controle le jour J ;

@@ -36,6 +36,13 @@ Sujet a traiter explicitement :
 - suivi d'utilisation ;
 - relance avant expiration.
 
+Doctrine de base :
+
+- une prestation peut etre **offrable** ou non ;
+- le cadeau reste rattache a une vraie commande ;
+- il ne doit pas etre traite comme un simple coupon promotionnel ;
+- le gestionnaire doit pouvoir suivre son statut simplement.
+
 ## Justificatif terrain
 
 Sujet a traiter explicitement :

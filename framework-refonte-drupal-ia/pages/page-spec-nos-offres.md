@@ -33,6 +33,7 @@ Faire de `Nos offres` la page commerciale centrale du site et le point d'entree 
 - textes courts ;
 - prix ;
 - disponibilite en carte cadeau ;
+- eligibilite cadeau par offre ;
 - ordre des offres ;
 - visuels ;
 - CTA ;
