@@ -85,6 +85,7 @@ Documents sources associes :
 - `decisions/ADR-001-commerce-sobre.md`
 - `decisions/ADR-002-legacy-dtregister-jevents.md`
 - `decisions/ADR-003-socle-applicatif-ddev.md`
+- `decisions/ADR-004-configuration-exportable-et-seed-content.md`
 - `briefs/feature-brief-parcours-offres-vente.md`
 - `pages/page-spec-nos-offres.md`
 - `pages/page-spec-contact.md`
