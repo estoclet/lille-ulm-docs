@@ -23,6 +23,8 @@ Le QR code n'est pas considere comme une preuve suffisante en lui-meme.
 
 Il doit simplement ouvrir ou transmettre un moyen de verifier en temps reel un statut cote serveur.
 
+L'identifiant unique de verification n'est jamais saisi librement par l'acheteur dans le parcours d'achat.
+
 ## Parcours cible
 
 1. apres paiement, le systeme emet un justificatif ;

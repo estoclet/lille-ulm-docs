@@ -19,6 +19,7 @@ Regles retenues :
 
 - une offre peut etre marquee comme **offrable** ou non ;
 - la page `Nos offres` doit rendre visible le choix **pour soi / pour offrir** ;
+- dans le premier parcours Commerce, ce choix est capture sur la **ligne de commande** des l'ajout au panier ;
 - une offre offerte ne doit pas etre modelisee comme un simple coupon marketing ;
 - le cadeau doit etre rattache a une commande reelle et a un identifiant unique ;
 - la logique de verification terrain sera cadree a part, mais doit rester compatible avec ce parcours.
@@ -42,6 +43,12 @@ La piste a privilegier est :
 - Drupal Commerce comme socle ;
 - module contrib de type **gift card / voucher** si sa compatibilite est validee ;
 - petit ajustement borne seulement si la capture des informations cadeau ou la restitution du support l'exige.
+
+Dans le cadrage actuel, le petit ajustement borne retenu consiste a :
+
+- exposer un booléen `acheter pour offrir` sur le formulaire d'ajout au panier des seules offres offrables ;
+- afficher alors les champs beneficiaire / email / message cadeau ;
+- laisser les statuts cadeau hors saisie acheteur.
 
 Le projet ne doit pas partir d'emblee sur un custom complet de logique cadeau.
 

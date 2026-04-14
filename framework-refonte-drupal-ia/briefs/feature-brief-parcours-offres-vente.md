@@ -45,9 +45,11 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - le CTA principal doit etre evident ;
 - le parcours doit accepter l'achat en ligne sans exposer de page technique legacy ;
 - le parcours doit rendre explicite la difference entre achat pour soi et achat a offrir ;
+- pour une offre offrable, le premier point de capture retenu est l'ajout au panier, au niveau de la ligne de commande ;
 - le parcours doit produire un justificatif d'achat simple a presenter et difficile a falsifier ;
 - une offre a offrir doit rester rattachee a une vraie commande et a un identifiant unique ;
 - le justificatif doit pouvoir etre controle rapidement cote pilote via une verification serveur ;
+- l'identifiant de justificatif et ses statuts restent hors saisie acheteur et sous controle serveur / back-office ;
 - le gestionnaire doit pouvoir mettre a jour textes, prix et blocs de rassurance.
 
 ## UI attendue
