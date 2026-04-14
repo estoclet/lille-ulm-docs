@@ -61,6 +61,13 @@ Sorties minimales :
 - historique utile
 - SEO critique
 
+Sous-lots recommandes :
+
+1. contenus et URLs prioritaires ;
+2. medias source utiles ;
+3. archives transactionnelles `DT Register` ;
+4. agenda `JEvents` seulement si un besoin cible est confirme.
+
 ## Lot 7 - Qualite
 
 - accessibilite

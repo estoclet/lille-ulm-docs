@@ -94,6 +94,7 @@ Documents sources associes :
 - `decisions/ADR-010-modele-commerce-minimal.md`
 - `decisions/ADR-011-piste-billetterie-contrib.md`
 - `decisions/ADR-012-donnees-cadeau-et-justificatif-sur-ligne-de-commande.md`
+- `decisions/ADR-013-reprise-selective-des-donnees-joomla.md`
 - `briefs/feature-brief-parcours-offres-vente.md`
 - `pages/page-spec-nos-offres.md`
 - `pages/page-spec-contact.md`
@@ -126,4 +127,4 @@ Le demarrage du projet doit produire rapidement :
 - un feature brief sur le parcours d'offre et de vente ;
 - une page spec pour `Nos offres` ;
 - une page spec pour `Contact` ;
-- une decision sur l'archivage des donnees legacy.
+- une decision sur l'archivage et la reprise selective des donnees legacy.

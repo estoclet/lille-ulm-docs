@@ -18,6 +18,7 @@ reading_order:
   - decisions/ADR-010-modele-commerce-minimal.md
   - decisions/ADR-011-piste-billetterie-contrib.md
   - decisions/ADR-012-donnees-cadeau-et-justificatif-sur-ligne-de-commande.md
+  - decisions/ADR-013-reprise-selective-des-donnees-joomla.md
   - briefs/feature-brief-parcours-offres-vente.md
   - pages/page-spec-nos-offres.md
   - pages/page-spec-contact.md
@@ -84,6 +85,9 @@ documents:
   - file: decisions/ADR-012-donnees-cadeau-et-justificatif-sur-ligne-de-commande.md
     role: decision
     tags: [order-item, gift, proof, commerce]
+  - file: decisions/ADR-013-reprise-selective-des-donnees-joomla.md
+    role: decision
+    tags: [migration, joomla, legacy, archive]
   - file: briefs/feature-brief-parcours-offres-vente.md
     role: feature-brief
     tags: [offers, sales, conversion, commerce]
