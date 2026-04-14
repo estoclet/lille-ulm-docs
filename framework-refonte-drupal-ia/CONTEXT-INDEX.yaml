@@ -6,6 +6,11 @@ purpose: >
 
 reading_order:
   - 00-initialisation-projet.md
+  - decisions/ADR-001-commerce-sobre.md
+  - decisions/ADR-002-legacy-dtregister-jevents.md
+  - briefs/feature-brief-parcours-offres-vente.md
+  - pages/page-spec-nos-offres.md
+  - pages/page-spec-contact.md
   - 01-principes-et-perimetre.md
   - 02-regles-de-decoupage-pour-ia.md
   - 03-gouvernance-produit-projet.md
@@ -33,6 +38,21 @@ documents:
   - file: 00-initialisation-projet.md
     role: kickoff
     tags: [existing-site, baseline, priorities, discovery]
+  - file: decisions/ADR-001-commerce-sobre.md
+    role: decision
+    tags: [commerce, sales, mvp, architecture]
+  - file: decisions/ADR-002-legacy-dtregister-jevents.md
+    role: decision
+    tags: [legacy, migration, dtregister, jevents]
+  - file: briefs/feature-brief-parcours-offres-vente.md
+    role: feature-brief
+    tags: [offers, sales, conversion, commerce]
+  - file: pages/page-spec-nos-offres.md
+    role: page-spec
+    tags: [offers, landing, conversion, editorial]
+  - file: pages/page-spec-contact.md
+    role: page-spec
+    tags: [contact, lead, reassurance, rgpd]
   - file: 01-principes-et-perimetre.md
     role: vision
     tags: [vision, scope, drupal, commerce, ux]
@@ -69,7 +89,7 @@ templates:
 
 source_of_truth:
   current_state: 00-initialisation-projet.md
-  decisions: templates/adr-template.md
-  feature_scope: templates/feature-brief-template.md
-  page_behavior: templates/page-spec-template.md
+  decisions: decisions/
+  feature_scope: briefs/
+  page_behavior: pages/
   agent_execution: templates/agent-task-pack-template.md

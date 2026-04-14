@@ -70,6 +70,24 @@ Priorite secondaire rapide :
 4. role futur de `JEvents` : public, interne ou supprime ;
 5. niveau de reprise des medias et des URLs SEO.
 
+## Arbitrages deja valides
+
+Arbitrages valides a ce stade :
+
+- oui a **Drupal Commerce**, mais avec un perimetre volontairement sobre ;
+- non a la reconduction de `DT Register` et `JEvents` comme moteurs vivants ;
+- oui a une page `Nos offres` prioritaire, tres orientee conversion ;
+- oui a une page `Contact` simple, rassurante et exploitable par le gestionnaire ;
+- oui a un socle Drupal minimal, clair et fortement editable.
+
+Documents sources associes :
+
+- `decisions/ADR-001-commerce-sobre.md`
+- `decisions/ADR-002-legacy-dtregister-jevents.md`
+- `briefs/feature-brief-parcours-offres-vente.md`
+- `pages/page-spec-nos-offres.md`
+- `pages/page-spec-contact.md`
+
 ## Regle de depart
 
 Ne pas chercher a reproduire Joomla.
