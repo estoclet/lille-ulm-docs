@@ -86,3 +86,33 @@ Chaque page doit etre modifiable par :
 - composants "bon usage" ;
 - previsualisation ;
 - documentation courte liee aux pages critiques.
+
+## Documentation gestionnaire integree
+
+La documentation gestionnaire ne doit pas vivre seulement hors du site.
+
+Elle doit etre :
+
+- integree dans le back-office Drupal ;
+- accessible depuis les ecrans utiles ;
+- maintenue a jour en permanence avec le produit reel ;
+- redigee en langage simple, sans jargon Drupal.
+
+## Regles de redaction
+
+La documentation visible par le gestionnaire doit :
+
+- expliquer ou cliquer ;
+- expliquer ce que l'on voit a l'ecran ;
+- expliquer quoi verifier apres une action ;
+- eviter tout vocabulaire technique inutile ;
+- ne jamais supposer que le gestionnaire connait Drupal.
+
+## Format recommande
+
+Preferer une documentation courte et embarquee :
+
+- page d'aide d'accueil ;
+- aides contextuelles sur les ecrans importants ;
+- liens "comment faire" depuis les vues critiques ;
+- captures et formulations metier si cela aide vraiment.

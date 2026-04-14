@@ -3,6 +3,7 @@
 ## Socle recommande
 
 - Drupal 11
+- environnement local : **DDEV**
 - Theme admin : **Gin**
 - Navigation admin : **Admin Toolbar**
 - Edition media : Media Library
@@ -11,6 +12,17 @@
 - Formulaires : Webform
 - Consentement / cookies : module dedie conforme RGPD
 - Analytics : solution sobre et compatible consentement, idealement Matomo
+
+## Regle d'environnement local
+
+Le developpement local doit etre pense **DDEV-first** :
+
+- demarrage standardise pour tous ;
+- services locaux predictibles ;
+- commandes projet executees via DDEV ;
+- documentation d'installation alignee sur DDEV.
+
+Le projet ne doit pas dependre d'une installation locale artisanale propre a un seul poste.
 
 ## Composition editoriale
 
@@ -87,3 +99,14 @@ Chaque besoin metier doit preferer :
 2. un module contrib mature ;
 3. un petit module custom borne ;
 4. jamais un gros custom si un contrib stable suffit.
+
+## Hygiene de depot
+
+Le repo applicatif doit maintenir un `.gitignore` strict et a jour en permanence.
+
+Objectif :
+
+- ne jamais commiter de fichiers generes localement ;
+- ne jamais commiter de secrets ;
+- ne jamais laisser grossir le depot avec des artefacts evitables ;
+- garder un poste clonable et reproductible.

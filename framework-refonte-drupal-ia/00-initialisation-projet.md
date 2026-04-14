@@ -88,6 +88,14 @@ Documents sources associes :
 - `pages/page-spec-nos-offres.md`
 - `pages/page-spec-contact.md`
 
+Contraintes de mise en oeuvre deja validees :
+
+- environnement local standardise sur **DDEV** ;
+- `.gitignore` du repo applicatif maintenu a jour en permanence ;
+- documentation gestionnaire integree au back-office Drupal ;
+- documentation gestionnaire maintenue en continu ;
+- documentation gestionnaire redigee en langage simple pour une personne ne connaissant pas Drupal.
+
 ## Regle de depart
 
 Ne pas chercher a reproduire Joomla.
