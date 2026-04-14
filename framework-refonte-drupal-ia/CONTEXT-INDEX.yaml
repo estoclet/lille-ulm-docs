@@ -10,6 +10,7 @@ reading_order:
   - decisions/ADR-002-legacy-dtregister-jevents.md
   - decisions/ADR-003-socle-applicatif-ddev.md
   - decisions/ADR-004-configuration-exportable-et-seed-content.md
+  - decisions/ADR-005-doctrine-seed-content-initial.md
   - briefs/feature-brief-parcours-offres-vente.md
   - pages/page-spec-nos-offres.md
   - pages/page-spec-contact.md
@@ -52,6 +53,9 @@ documents:
   - file: decisions/ADR-004-configuration-exportable-et-seed-content.md
     role: decision
     tags: [config, deployment, seed-content, roles, permissions]
+  - file: decisions/ADR-005-doctrine-seed-content-initial.md
+    role: decision
+    tags: [seed-content, default-content, backoffice-help, deployment]
   - file: briefs/feature-brief-parcours-offres-vente.md
     role: feature-brief
     tags: [offers, sales, conversion, commerce]

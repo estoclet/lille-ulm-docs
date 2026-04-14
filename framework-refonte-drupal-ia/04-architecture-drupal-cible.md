@@ -90,6 +90,26 @@ Si Commerce est retenu :
 | Recherche interne | Search API si besoin reel |
 | Consentement | module cookies / consentement adapte au RGPD |
 | Analytics respectueux | Matomo |
+| Seed content initial | Default Content si besoin reel et borne |
+| Aide back-office integree | mecanisme core/contrib dedie avant custom |
+
+## Doctrine seed content
+
+Le projet ne doit pas confondre :
+
+- configuration Drupal ;
+- contenus editoriaux ordinaires ;
+- seed content de premier deploiement.
+
+Regle :
+
+1. la structure va dans la configuration versionnee ;
+2. le contenu editorial courant n'a pas vocation a etre versionne ;
+3. seul un seed content minimal, stable et vraiment utile au premier deploiement peut etre industrialise.
+
+La piste a privilegier est un module contrib simple de type **Default Content** si un vrai besoin apparait.
+
+Les mecanismes lourds de synchronisation de contenus ne doivent pas etre introduits sans besoin operationnel explicite.
 
 ## Regle d'architecture
 

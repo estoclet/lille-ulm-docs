@@ -135,6 +135,15 @@ Elle doit etre :
 - maintenue a jour en permanence avec le produit reel ;
 - redigee en langage simple, sans jargon Drupal.
 
+Si une aide back-office doit exister des le premier deploiement, elle peut faire partie du **seed content initial**.
+
+Dans ce cas, elle doit rester :
+
+- courte ;
+- stable ;
+- identique entre environnements ;
+- gerable sans code custom si possible.
+
 ## Regles de redaction
 
 La documentation visible par le gestionnaire doit :
@@ -153,3 +162,5 @@ Preferer une documentation courte et embarquee :
 - aides contextuelles sur les ecrans importants ;
 - liens "comment faire" depuis les vues critiques ;
 - captures et formulations metier si cela aide vraiment.
+
+Le projet doit d'abord rechercher un mecanisme core/contrib adapte avant toute documentation admin custom.
