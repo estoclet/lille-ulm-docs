@@ -93,12 +93,17 @@ Si Commerce est retenu :
 
 ## Regle d'architecture
 
-Chaque besoin metier doit preferer :
+Chaque nouvelle fonctionnalite doit suivre cet ordre :
 
-1. le core Drupal ;
-2. un module contrib mature ;
-3. un petit module custom borne ;
-4. jamais un gros custom si un contrib stable suffit.
+1. verifier si le core Drupal couvre deja le besoin ;
+2. rechercher un module contrib mature et maintenu ;
+3. ne considerer un petit custom borne qu'en absence d'autre solution viable.
+
+Le code custom doit rester **l'exception**, pas la norme.
+
+Un besoin ne doit pas partir en implementation tant que la recherche core / contrib n'a pas ete faite et consignée.
+
+Un gros custom n'est jamais acceptable si un contrib stable suffit.
 
 ## Hygiene de depot
 

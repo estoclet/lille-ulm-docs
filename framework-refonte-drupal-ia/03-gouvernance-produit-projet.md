@@ -77,7 +77,19 @@ Une fonctionnalite n'entre en build que si elle a :
 2. un ecran ou parcours cible ;
 3. des regles de gestion ;
 4. un proprietaire de decision ;
-5. un impact editorial ou technique identifie.
+5. un impact editorial ou technique identifie ;
+6. une recherche explicite de solution core / contrib.
+
+## Regle low-code
+
+Le projet suit une approche **low-code**.
+
+Regle :
+
+- toute nouvelle fonctionnalite doit d'abord faire l'objet d'une recherche de module contrib ;
+- le core Drupal reste prioritaire quand il couvre deja le besoin ;
+- le code custom ne doit intervenir qu'en dernier recours ;
+- le custom doit rester borne, justifie et documente.
 
 ## Definition of Done
 
