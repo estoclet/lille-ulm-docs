@@ -28,13 +28,14 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - rassurance ;
 - CTA vers achat ou demande ;
 - possibilite d'acheter une prestation a offrir ;
+- reservation d'un creneau date/heure parmi des disponibilites ouvertes par le gestionnaire ;
 - articulation avec paiements et confirmations ;
 - preuve d'achat facilement presentable le jour de la prestation ;
 - lien vers telephone / contact si besoin.
 
 ## Perimetre out
 
-- planning detaille type agenda public ;
+- reconduction d'un agenda public legacy type `JEvents` ;
 - reprise technique de `DT Register` ;
 - logique CRM avancee ;
 - promotions complexes au premier lot.
@@ -46,6 +47,8 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - le parcours doit accepter l'achat en ligne sans exposer de page technique legacy ;
 - le parcours doit rendre explicite la difference entre achat pour soi et achat a offrir ;
 - pour une offre offrable, le premier point de capture retenu est l'ajout au panier, au niveau de la ligne de commande ;
+- le parcours cible doit permettre la selection d'un creneau parmi les disponibilites ouvertes par le gestionnaire ;
+- un creneau reserve doit devenir indisponible pour une autre commande ;
 - le parcours doit produire un justificatif d'achat simple a presenter et difficile a falsifier ;
 - une offre a offrir doit rester rattachee a une vraie commande et a un identifiant unique ;
 - le justificatif doit pouvoir etre controle rapidement cote pilote via une verification serveur ;
@@ -66,6 +69,7 @@ Definir un parcours clair qui presente les offres, rassure, puis emmene vers l'a
 - prix ;
 - durees ;
 - eligibility cadeau / offre a offrir ;
+- disponibilites / creneaux selon les offres concernees ;
 - destinataire / beneficiaire si achat cadeau ;
 - conditions simples ;
 - messages de reassurance ;

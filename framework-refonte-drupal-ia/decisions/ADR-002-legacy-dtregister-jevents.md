@@ -24,7 +24,8 @@ Strategie retenue :
 - archiver l'historique utile ;
 - reprendre seulement les donnees reellement necessaires ;
 - reconstruire le parcours de vente et les confirmations dans Drupal ;
-- traiter l'agenda comme un besoin a part, sans agenda public par defaut.
+- reconstruire dans Drupal le besoin agenda / disponibilites s'il est confirme metierement, sans reconduire `JEvents` ;
+- ne pas partir d'un agenda public legacy par defaut.
 
 ## Alternatives ecartees
 
@@ -36,7 +37,7 @@ Strategie retenue :
 
 - un travail de qualification des donnees legacy devient necessaire ;
 - le futur tunnel peut etre pense pour le gestionnaire et non pour la compatibilite Joomla ;
-- `JEvents` ne doit etre repris que si un vrai usage public ou interne est confirme ;
+- `JEvents` ne doit etre repris que comme source de reprise eventuelle, pas comme moteur cible ;
 - les redirections et l'archivage doivent etre traites comme sujets de migration.
 
 ## Impact IA

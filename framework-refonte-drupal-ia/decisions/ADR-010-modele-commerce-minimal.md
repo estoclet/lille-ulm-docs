@@ -53,6 +53,8 @@ Le modele cible minimal s'appuie sur les briques Drupal Commerce suivantes :
 - statut de verification / consommation ;
 - acces scannable si pertinent.
 
+L'identifiant peut etre genere cote serveur a partir du moment ou la commande est placee, sans attendre encore la forme finale du support.
+
 Le projet ne cree pas de nouvelle entite custom tant que les champs portes par la commande ou la ligne de commande suffisent.
 
 Dans le cadrage actuel, cadeau et justificatif doivent vivre **sur la ligne de commande**.

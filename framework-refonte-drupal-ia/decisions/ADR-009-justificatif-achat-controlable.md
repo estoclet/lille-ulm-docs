@@ -33,6 +33,8 @@ L'identifiant unique de verification n'est jamais saisi librement par l'acheteur
 4. il voit immediatement un statut simple ;
 5. si besoin, il confirme l'usage ou la consommation.
 
+Dans le cadrage actuel, l'identifiant technique peut etre reserve des la commande placee, mais l'emission finale du justificatif reste distincte.
+
 ## Statuts minimaux a afficher
 
 - valide ;

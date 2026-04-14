@@ -31,6 +31,21 @@ Base minimale cible :
 - cadeau = donnees bornees rattachees a la commande ou a la ligne de commande ;
 - justificatif = identifiant et statut de verification rattaches a l'achat.
 
+## Creneaux et disponibilites
+
+Besoin metier confirme :
+
+- le gestionnaire ouvre des creneaux date/heure ;
+- une commande doit pouvoir reserver un creneau parmi ces disponibilites ;
+- un creneau reserve devient indisponible.
+
+Doctrine de base :
+
+- la source de verite des disponibilites reste cote serveur ;
+- la prevention du double booking est obligatoire ;
+- le besoin doit etre reconstruit dans Drupal, pas reconduit via `JEvents` ;
+- le modele cible doit articuler Commerce et reservation sans surimposer un agenda legacy public.
+
 ## Bons cadeaux
 
 Sujet a traiter explicitement :

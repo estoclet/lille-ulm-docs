@@ -67,8 +67,9 @@ Priorite secondaire rapide :
 1. vente en ligne maintenue ou non ;
 2. Drupal Commerce necessaire ou non ;
 3. reprise, archivage ou abandon de l'historique `DT Register` ;
-4. role futur de `JEvents` : public, interne ou supprime ;
-5. niveau de reprise des medias et des URLs SEO.
+4. besoin cible de disponibilites / reservation de creneaux ;
+5. role futur de `JEvents` : public, interne ou supprime ;
+6. niveau de reprise des medias et des URLs SEO.
 
 ## Arbitrages deja valides
 
@@ -76,6 +77,7 @@ Arbitrages valides a ce stade :
 
 - oui a **Drupal Commerce**, mais avec un perimetre volontairement sobre ;
 - non a la reconduction de `DT Register` et `JEvents` comme moteurs vivants ;
+- oui a un besoin cible de reservation de creneaux, a reconstruire dans Drupal ;
 - oui a une page `Nos offres` prioritaire, tres orientee conversion ;
 - oui a une page `Contact` simple, rassurante et exploitable par le gestionnaire ;
 - oui a un socle Drupal minimal, clair et fortement editable.
@@ -95,6 +97,8 @@ Documents sources associes :
 - `decisions/ADR-011-piste-billetterie-contrib.md`
 - `decisions/ADR-012-donnees-cadeau-et-justificatif-sur-ligne-de-commande.md`
 - `decisions/ADR-013-reprise-selective-des-donnees-joomla.md`
+- `decisions/ADR-014-generation-serveur-identifiant-justificatif.md`
+- `decisions/ADR-015-reservation-de-creneaux.md`
 - `briefs/feature-brief-parcours-offres-vente.md`
 - `pages/page-spec-nos-offres.md`
 - `pages/page-spec-contact.md`
