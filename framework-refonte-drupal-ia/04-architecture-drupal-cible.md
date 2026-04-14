@@ -94,6 +94,7 @@ Si Commerce est retenu :
 | Analytics respectueux | Matomo |
 | Seed content initial | Default Content si besoin reel et borne |
 | Aide back-office integree | mecanisme core/contrib dedie avant custom |
+| Controle terrain / scan | ticketing contrib a evaluer avant custom |
 
 ## Doctrine seed content
 

@@ -92,6 +92,7 @@ Documents sources associes :
 - `decisions/ADR-008-logique-prestations-a-offrir.md`
 - `decisions/ADR-009-justificatif-achat-controlable.md`
 - `decisions/ADR-010-modele-commerce-minimal.md`
+- `decisions/ADR-011-piste-billetterie-contrib.md`
 - `briefs/feature-brief-parcours-offres-vente.md`
 - `pages/page-spec-nos-offres.md`
 - `pages/page-spec-contact.md`

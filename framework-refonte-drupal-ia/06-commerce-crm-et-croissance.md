@@ -68,6 +68,11 @@ Doctrine de base :
 - le pilote doit voir un statut tres simple ;
 - la verification doit pouvoir marquer l'usage ou la consommation.
 
+Piste contrib a evaluer :
+
+- une solution de type **ticketing / billetterie** peut etre pertinente si elle couvre emission + scan + controle plus simplement que notre modele borne ;
+- elle ne doit pas etre retenue si elle impose une logique evenementielle trop lourde pour une prestation Lille ULM.
+
 ## CRM raisonnable
 
 Eviter de transformer Drupal en monstre.
