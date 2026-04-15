@@ -1,7 +1,6 @@
 # Agent task pack - Import medias Joomla dans le Media Drupal
 
 ## Statut
-
 ready
 
 ## Agent cible
