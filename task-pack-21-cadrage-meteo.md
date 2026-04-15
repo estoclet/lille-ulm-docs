@@ -1,7 +1,7 @@
 # Agent task pack - Cadrage fonctionnalite meteo
 
 ## Statut
-review
+done
 
 ## Agent cible
 

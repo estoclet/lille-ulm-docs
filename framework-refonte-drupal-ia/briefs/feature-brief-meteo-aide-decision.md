@@ -2,7 +2,7 @@
 
 ## Statut
 
-cadrage termine - ADR a produire avant implementation
+cadrage termine - ADR-017 produit
 
 ## Issue liee
 
@@ -38,31 +38,31 @@ Ce que le gestionnaire fait :
 - notification automatique ou push a l'acheteur ;
 - annulation automatique ;
 - integration temps-reel ou webhook meteo ;
-- parametrage des seuils par le gestionnaire (seuils fixes en premiere version) ;
+- ecran metier dedie au parametrage des seuils par le gestionnaire ;
 - affichage cote client public.
 
 ## Donnees minimales necessaires
 
-| Variable | Seuil indicatif "defavorable" | Source |
+| Variable | Usage | Source de verite |
 |---|---|---|
-| Vent moyen | > 25 km/h | fait observe : contrainte ULM legere |
-| Rafales | > 35 km/h | fait observe |
-| Precipitations | > 0.5 mm/h | fait observe |
-| Visibilite | < 5 km | fait observe |
-| Plafond nuageux | < 300 m | hypothese - a confirmer avec le gestionnaire |
+| Vent moyen | aide a la decision de maintien / report | ADR-017 |
+| Rafales | aide a la decision de maintien / report | ADR-017 |
+| Precipitations | aide a la decision de maintien / report | ADR-017 |
+| Visibilite | aide a la decision de maintien / report | ADR-017 |
+| Plafond nuageux / proxy `cloud_cover_low` | aide a la decision de maintien / report | ADR-017 |
 
-Les seuils sont des valeurs de depart. Ils doivent etre valides par le gestionnaire avant mise en production.
+Les seuils exacts, le proxy plafond nuageux et la doctrine de cache sont portes par
+`decisions/ADR-017-api-meteo-et-doctrine-integration.md`.
 
-## API retenue (proposition)
+## Doctrine d'integration retenue
 
-**Open-Meteo** (hypothese - a confirmer dans un ADR) :
+`decisions/ADR-017-api-meteo-et-doctrine-integration.md` fixe :
 
-- gratuit, sans cle API, open-source ;
-- donnees AROME (modele Meteo-France haute resolution) disponibles ;
-- granularite horaire, precision locale correcte pour le secteur Lille ;
-- variables disponibles : vent, precipitations, visibilite, couverture nuageuse.
-
-Alternative a evaluer : API Meteo-France officielle (AROME direct, necessite inscription).
+- **Open-Meteo** comme API par defaut ;
+- **AROME Meteo-France** comme alternative configurable ;
+- un cache de 15 minutes ;
+- une localisation fixe Bondues / Lille ;
+- une doctrine stricte de non-automatisation du report.
 
 ## Positionnement roadmap
 
@@ -73,17 +73,14 @@ Alternative a evaluer : API Meteo-France officielle (AROME direct, necessite ins
 
 ## Questions ouvertes (decisions a prendre)
 
-1. Validation des seuils meteo avec le gestionnaire (fait observe ou hypothese a confirmer ?).
-2. Choix definitif de l'API : Open-Meteo vs Meteo-France (necessite un ADR).
-3. Frequence de rafraichissement : a la demande (requete HTTP au chargement de la vue) ou cache court (15 min) ?
-4. Notification acheteur en cas de report : email manuel par le gestionnaire ou email automatique ? Hors perimetre premier lot mais a cadrer avant 22b.
-5. Faut-il un ecran dedie "suivi meteo des reservations" ou un widget dans la vue existante ?
+1. Validation en recette des seuils et du proxy plafond nuageux avec le gestionnaire.
+2. Niveau de detail exact du lien vers la source externe dans la vue gestionnaire.
 
-## ADR a produire avant implementation
+## ADR produit
 
-Un ADR "Choix API meteo et doctrine d'integration" doit etre produit avant tout code. Il doit couvrir :
+`decisions/ADR-017-api-meteo-et-doctrine-integration.md` couvre :
 
-- API retenue et raison du choix ;
-- modele de donnees minimal (cache, frequence) ;
-- emplacement dans le back-office ;
-- doctrine de non-automatisation (reaffirmer ADR-016).
+- API retenue (Open-Meteo par defaut, AROME configurable) ;
+- modele de donnees minimal (cache 15 min) ;
+- emplacement : vue gestionnaire des reservations (livrable de 22b) ;
+- doctrine de non-automatisation (conforme ADR-016).

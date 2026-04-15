@@ -22,6 +22,7 @@ reading_order:
   - decisions/ADR-014-generation-serveur-identifiant-justificatif.md
   - decisions/ADR-015-reservation-de-creneaux.md
   - decisions/ADR-016-modele-minimal-reservation-de-creneau.md
+  - decisions/ADR-017-api-meteo-et-doctrine-integration.md
   - briefs/feature-brief-parcours-offres-vente.md
   - pages/page-spec-nos-offres.md
   - pages/page-spec-contact.md
@@ -101,6 +102,9 @@ documents:
   - file: decisions/ADR-016-modele-minimal-reservation-de-creneau.md
     role: decision
     tags: [booking, slots, order-item, reschedule, weather]
+  - file: decisions/ADR-017-api-meteo-et-doctrine-integration.md
+    role: decision
+    tags: [meteo, api, open-meteo, arome, booking, gestionnaire]
   - file: briefs/feature-brief-parcours-offres-vente.md
     role: feature-brief
     tags: [offers, sales, conversion, commerce]
