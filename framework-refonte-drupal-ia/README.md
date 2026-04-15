@@ -80,11 +80,12 @@ Le backlog operationnel vit dans les **GitHub Issues du repo framework**.
 Regles simples :
 
 1. un sujet suivi = une issue ;
-2. une decision structurante = une issue puis un ADR ;
-3. une issue fermee = un sujet termine ou arbitre ;
-4. le framework ne doit pas dupliquer un backlog parallele dans des fichiers Markdown ;
-5. une issue resolue dans le code ou dans la configuration doit etre fermee dans la meme sequence de travail ;
-6. il est interdit de laisser ouverte une issue traitee "pour y penser plus tard" : si le traitement est partiel, l issue doit etre mise a jour pour expliciter clairement le reliquat avant fin de session.
+2. les issues projet sont creees uniquement dans le repo documentaire `lille-ulm-docs`, jamais dans le repo applicatif ;
+3. une decision structurante = une issue puis un ADR ;
+4. une issue fermee = un sujet termine ou arbitre ;
+5. le framework ne doit pas dupliquer un backlog parallele dans des fichiers Markdown ;
+6. une issue resolue dans le code ou dans la configuration doit etre fermee dans la meme sequence de travail ;
+7. il est interdit de laisser ouverte une issue traitee "pour y penser plus tard" : si le traitement est partiel, l issue doit etre mise a jour pour expliciter clairement le reliquat avant fin de session.
 
 Jeu minimal de labels :
 
