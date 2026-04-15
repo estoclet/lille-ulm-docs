@@ -35,6 +35,7 @@ Une IA ne doit jamais transformer une probabilite en verite.
 
 ## Regle 3 - Budget de taille non negociable
 
+- cible : **120 lignes** ;
 - jusqu'a 140 lignes : acceptable ;
 - entre 141 et 180 : a surveiller ;
 - au dela de 180 : split obligatoire.

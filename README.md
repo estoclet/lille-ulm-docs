@@ -21,3 +21,6 @@ Depot de documentation, cadrage et pilotage pour la refonte Lille ULM.
 Le backlog operationnel vit dans les GitHub Issues du depot.
 
 Les tickets visibles cote client portent le label `client`.
+
+Les task packs actifs sont a la racine du depot (`task-pack-*.md`).
+Valider, rendre ou dispatcher un pack : `python3 framework-refonte-drupal-ia/orchestrateur.py --help`

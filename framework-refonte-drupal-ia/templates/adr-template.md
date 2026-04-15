@@ -4,12 +4,12 @@
 
 ## Decision
 
+## Pourquoi ce choix
+
+(optionnel - expliquer le raisonnement si la decision n'est pas evidente)
+
 ## Alternatives ecartees
 
+(optionnel - utile si une alternative credible a ete explicitement rejetee)
+
 ## Consequences
-
-## Impact IA
-
-- fichiers a relire :
-- lots concernes :
-- risques de duplication :

@@ -42,6 +42,6 @@ Strategie retenue :
 
 ## Impact IA
 
-- fichiers a relire : `00-initialisation-projet.md`, `05-dette-technique-et-risques.md`, `13-matrice-refonte-pages.md`
+- fichiers a relire : `00-initialisation-projet.md`, `../refonte-site/05-dette-technique-et-risques.md`, `../refonte-site/13-matrice-refonte-pages.md`
 - lots concernes : cadrage business, migration, parcours business, SEO/redirections
 - risques de duplication : ne pas reecrire l'analyse legacy complete dans les specs de pages

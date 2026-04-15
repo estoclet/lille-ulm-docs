@@ -134,22 +134,6 @@ Toute decision structurante doit devenir un ADR court :
 - strategie analytics ;
 - strategie consentement.
 
-## Regle anti-hallucination
-
-Un agent ne peut pas presenter comme fait :
-
-- une hypothese ;
-- une preference ;
-- une deduction non verifiee ;
-- une decision non encore tranchee.
-
-Ces cas doivent etre etiquetes explicitement :
-
-- `fait observe`
-- `hypothese`
-- `decision a prendre`
-- `risque`
-
 ## Regle de clarification
 
 Si une question impacte fortement le build, elle doit etre tranchee avant d'etre codee.
@@ -160,15 +144,6 @@ Exemples :
 - bon cadeau nominatif ou non ;
 - agenda public ou agenda interne ;
 - CRM dans Drupal ou via SaaS externe.
-
-## Regle d'edition documentaire
-
-Lorsqu'un document est mis a jour :
-
-1. corriger la source de verite d'abord ;
-2. mettre a jour les renvois ensuite ;
-3. ne pas etendre un fichier si un split est plus sain ;
-4. preferer une correction precise a une reecriture massive.
 
 ## Regle de liaison issue -> document
 

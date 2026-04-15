@@ -124,15 +124,7 @@ Chaque page doit etre modifiable par :
 - previsualisation ;
 - documentation courte liee aux pages critiques.
 
-## Premiere base retenue
-
-La premiere base d'aide integree retenue par le projet est le **core Help** de Drupal.
-
-Elle doit fournir au minimum :
-
-- acces aux pages `/admin/help` pour le role `gestionnaire` ;
-- bloc d'aide visible dans l'administration ;
-- enrichissement progressif ensuite seulement si les limites sont reelles.
+Le choix de la base d'aide integree est documente dans `decisions/ADR-006-aide-gestionnaire-backoffice.md`.
 
 ## Documentation gestionnaire integree
 

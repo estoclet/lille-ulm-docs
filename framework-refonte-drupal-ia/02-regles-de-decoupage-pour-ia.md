@@ -42,9 +42,9 @@ Utiliser des noms :
 
 Exemples :
 
-- `page-nos-offres.md`
-- `feature-bons-cadeaux.md`
-- `adr-003-commerce-ou-non.md`
+- `pages/page-spec-nos-offres.md`
+- `briefs/feature-brief-parcours-offres-vente.md`
+- `decisions/ADR-001-commerce-sobre.md`
 
 ## Task pack IA
 
