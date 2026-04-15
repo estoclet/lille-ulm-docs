@@ -34,6 +34,7 @@ reading_order:
   - 07-orchestration-claude-codex-copilot.md
   - 08-plan-de-lots.md
   - 09-gouvernance-ia-friendly.md
+  - 10-orchestrateur-v1.md
 
 file_budgets:
   target_lines: 120
@@ -136,6 +137,9 @@ documents:
   - file: 09-gouvernance-ia-friendly.md
     role: governance
     tags: [guardrails, anti-hallucination, source-of-truth, maintenance]
+  - file: 10-orchestrateur-v1.md
+    role: execution
+    tags: [orchestrator, task-pack, workflow, github-issues]
 
 templates:
   - templates/adr-template.md
@@ -149,3 +153,4 @@ source_of_truth:
   feature_scope: briefs/
   page_behavior: pages/
   agent_execution: templates/agent-task-pack-template.md
+  orchestration_runtime: 10-orchestrateur-v1.md

@@ -51,6 +51,7 @@ Principes obligatoires :
 8. `07-orchestration-claude-codex-copilot.md`
 9. `08-plan-de-lots.md`
 10. `09-gouvernance-ia-friendly.md`
+11. `10-orchestrateur-v1.md`
 
 ## Templates
 
@@ -60,6 +61,8 @@ Le dossier `templates/` contient les gabarits minimaux pour lancer :
 - une fonctionnalite ;
 - une page ;
 - un paquet de travail IA.
+
+Le CLI local `orchestrateur.py` permet ensuite de valider un task pack, generer le handoff et synchroniser son statut avec une issue GitHub.
 
 ## Initialisation du projet
 

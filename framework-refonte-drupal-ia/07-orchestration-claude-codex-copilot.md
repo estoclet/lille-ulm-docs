@@ -114,6 +114,15 @@ Si une issue existe deja, la sortie doit aussi permettre de mettre a jour :
 6. le commentaire de synthese ;
 7. les liens vers les fichiers produits.
 
+## Passage a l'execution outillee
+
+Quand le framework est utilise avec `orchestrateur.py` :
+
+- le task pack reste la source d'entree ;
+- le statut de la tache suit `draft -> ready -> running -> review -> done|blocked` ;
+- l'orchestrateur valide le pack avant delegation ;
+- l'issue GitHub peut etre synchronisee depuis ce meme pack.
+
 ## Regle de split documentaire
 
 Si une sortie propose :
