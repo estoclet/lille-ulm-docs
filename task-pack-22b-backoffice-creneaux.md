@@ -1,7 +1,7 @@
 # Agent task pack - Interface gestionnaire creneaux et report
 
 ## Statut
-review
+done
 
 ## Agent cible
 
