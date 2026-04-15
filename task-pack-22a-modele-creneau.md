@@ -58,7 +58,7 @@ Implementer la structure de donnees minimale permettant :
 - Drupal 11 + DDEV ;
 - un creneau ne peut pas etre reserve deux fois simultanement (prevention double booking obligatoire) ;
 - la source de verite des disponibilites reste cote serveur, jamais cote client ;
-- code custom uniquement si aucun contrib stable ne couvre le besoin — documenter la recherche contrib avant toute implementation custom ;
+- code custom uniquement si aucun contrib stable ne couvre le besoin ; la recherche contrib doit etre documentee dans la section "faits confirmes" de la sortie (nom du module evalue, raison du rejet ou de la selection) avant toute ligne de code custom ;
 - capacite initiale du creneau : 1 reservation par creneau ;
 - ne pas implementer d'interface gestionnaire dans ce pack (c'est le pack 22b) ;
 - ne pas implementer de fonctionnalite meteo dans ce pack ;

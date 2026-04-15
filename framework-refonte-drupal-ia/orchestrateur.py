@@ -203,6 +203,10 @@ def validate_task_pack(task_pack: TaskPack) -> tuple[list[str], list[str]]:
         errors.append("Section 'Objectif' must not be empty")
     if not task_pack.get("livrable attendu"):
         errors.append("Section 'Livrable attendu' must not be empty")
+    elif len(task_pack.get("livrable attendu").split()) < 15:
+        warnings.append(
+            "Section 'Livrable attendu' is very short; under-specified deliverables increase drift risk"
+        )
     if not task_pack.get("contraintes"):
         errors.append("Section 'Contraintes' must not be empty")
     if not task_pack.get("verification attendue"):
@@ -278,7 +282,12 @@ def build_handoff(task_pack: TaskPack) -> str:
         f"Issue GitHub: {task_pack.issue or 'non liee'}",
         "",
         "Traite cette demande dans le cadre du framework-refonte-drupal-ia.",
-        "N'invente rien silencieusement. Marque explicitement ce qui est fait observe, hypothese, decision a prendre ou risque.",
+        "Regles anti-derive obligatoires :",
+        "- N'invente rien silencieusement. Marque explicitement : fait observe | hypothese | decision a prendre | risque.",
+        "- Si une ambiguite n'est pas resolue par les sources de verite listees : marque-la 'decision a prendre' et stoppe sur ce point. Ne tranche pas a la place de l'humain.",
+        "- Ne cree pas de nouveau fichier source de verite (ADR, brief, page spec). Si tu juges qu'un ADR est necessaire, signale-le dans 'questions ouvertes' sans le rediger.",
+        "- Ne touche pas aux fichiers listes dans 'Fichiers a ne pas toucher', meme pour corriger une coquille.",
+        "- Le perimetre de ce pack est ferme. Toute extension de perimetre doit etre signalee comme 'decision a prendre', pas implementee.",
         "",
         block("Objectif", task_pack.get("objectif")),
         "",
@@ -292,6 +301,10 @@ def build_handoff(task_pack: TaskPack) -> str:
         "",
         block("Contraintes", task_pack.get("contraintes")),
         "",
+        *(
+            [block("En cas de blocage ou d'ambiguite", task_pack.get("en cas de blocage ou d'ambiguite")), ""]
+            if task_pack.get("en cas de blocage ou d'ambiguite") else []
+        ),
         block("Verification attendue", task_pack.get("verification attendue")),
         "",
         block("Definition de fin", task_pack.get("definition de fin")),

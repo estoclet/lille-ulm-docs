@@ -80,9 +80,20 @@ La commande recueille le handoff sur son entree standard.
 ## Ce que fait la V1
 
 - valide les champs et les chemins du task pack ;
-- genere un prompt de delegation borne ;
+- genere un prompt de delegation borne avec regles anti-derive obligatoires ;
+- avertit si le livrable est sous-specifie ou le contexte trop large ;
 - trace les runs dans `.orchestrator-state/` ;
 - permet une synchro simple avec GitHub Issues.
+
+## Regles anti-derive injectees dans chaque handoff
+
+Tout handoff genere contient les regles suivantes, non modifiables par le pack :
+
+1. marquer explicitement : fait observe | hypothese | decision a prendre | risque ;
+2. si une ambiguite n'est pas resolue par les sources listees : stopper sur ce point, ne pas trancher ;
+3. ne pas creer de nouveau fichier source de verite ;
+4. ne pas toucher aux fichiers interdits, meme pour corriger ;
+5. signaler toute extension de perimetre comme decision a prendre.
 
 ## Ce qu'elle ne fait pas
 

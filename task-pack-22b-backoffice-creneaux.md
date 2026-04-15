@@ -19,6 +19,7 @@ implementation
 
 - framework-refonte-drupal-ia/decisions/ADR-016-modele-minimal-reservation-de-creneau.md
 - framework-refonte-drupal-ia/decisions/ADR-015-reservation-de-creneaux.md
+- framework-refonte-drupal-ia/decisions/ADR-010-modele-commerce-minimal.md
 - framework-refonte-drupal-ia/05-backoffice-gestionnaire.md
 
 ## Objectif
@@ -39,10 +40,16 @@ Ce pack suppose que le modele de donnees du pack 22a est deja en place (entite c
 - notification ou log minimal lors d'un report (a minima une trace consultable) ;
 - permissions distinctes : le gestionnaire peut gerer les creneaux, l'acheteur ne peut pas modifier sa reservation directement.
 
+## Pre-requis
+
+Le pack `task-pack-22a-modele-creneau.md` doit etre en statut `done` avant de dispatcher ce pack.
+L'entite creneau, les champs de ligne de commande et la logique de verrou doivent etre installes et configures.
+
 ## Fichiers a lire
 
 - framework-refonte-drupal-ia/decisions/ADR-016-modele-minimal-reservation-de-creneau.md
 - framework-refonte-drupal-ia/decisions/ADR-015-reservation-de-creneaux.md
+- framework-refonte-drupal-ia/decisions/ADR-010-modele-commerce-minimal.md
 - framework-refonte-drupal-ia/05-backoffice-gestionnaire.md
 - framework-refonte-drupal-ia/04-architecture-drupal-cible.md
 
