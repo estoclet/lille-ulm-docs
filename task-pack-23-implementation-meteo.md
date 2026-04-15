@@ -1,8 +1,7 @@
 # Agent task pack - Implementation indicateur meteo reservations
 
 ## Statut
-
-ready
+done
 
 ## Agent cible
 
