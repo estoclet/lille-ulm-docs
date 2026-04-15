@@ -1,6 +1,6 @@
 # Plan de lots
 
-## Lot 0 - Initialisation
+## Lot 0 - Initialisation (complet)
 
 - relire `00-initialisation-projet.md`
 - confirmer les sources de verite issues de `refonte-site/`
@@ -8,20 +8,21 @@
 - qualifier le sort de `DT Register` et `JEvents`
 - confirmer les pages prioritaires du MVP
 
-Sorties minimales :
+Sorties produites :
 
-- 1 ADR de cadrage business
-- 1 feature brief parcours offres / vente
-- 2 page specs prioritaires
-- 1 decision de reprise / archivage legacy
+- ADR-001 (Commerce sobre), ADR-002 (legacy DT Register / JEvents)
+- briefs/feature-brief-parcours-offres-vente.md
+- pages/page-spec-nos-offres.md, pages/page-spec-contact.md
 
-## Lot 1 - Cadrage business
+## Lot 1 - Cadrage business (complet)
 
 - offres a vendre
 - besoin de paiement
 - besoin de bon cadeau
 - besoin de CRM
 - besoin d'agenda
+
+Sorties produites : ADR-003 a ADR-016, ADR-017, briefs/feature-brief-meteo-aide-decision.md
 
 ## Lot 2 - Architecture Drupal
 

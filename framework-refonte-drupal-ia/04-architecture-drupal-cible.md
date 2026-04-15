@@ -30,7 +30,7 @@ Le projet ne doit pas dependre d'une installation locale artisanale propre a un 
 
 - **Layout Builder** comme systeme de composition principal
 - **Single Directory Components** comme base de composants reutilisables
-- **UI Suite** seulement si un vrai besoin ulterieur de bibliotheque contrib se confirme
+- **UI Suite** seulement si un vrai besoin ulterieur de bibliotheque contrib se confirme (doctrine — ADR-007)
 
 ### Regle
 

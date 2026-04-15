@@ -39,7 +39,7 @@ Besoin metier confirme :
 - une commande doit pouvoir reserver un creneau parmi ces disponibilites ;
 - un creneau reserve devient indisponible.
 
-Doctrine de base :
+Doctrine de base (decisions — ADR-015, ADR-016) :
 
 - la source de verite des disponibilites reste cote serveur ;
 - la prevention du double booking est obligatoire ;
@@ -47,7 +47,7 @@ Doctrine de base :
 - le modele cible doit articuler Commerce et reservation sans surimposer un agenda legacy public ;
 - la selection du creneau est recommandee pendant l'achat, puis confirmee lorsque la commande est placee ;
 - la reservation doit etre portee par la ligne de commande pour rester compatible avec plusieurs achats ;
-- le gestionnaire doit pouvoir reporter une reservation, notamment en fonction des conditions meteo.
+- le gestionnaire peut reporter une reservation ; l'indicateur meteo l'aide a la decision (ADR-017).
 
 ## Bons cadeaux
 

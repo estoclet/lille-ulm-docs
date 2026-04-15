@@ -16,8 +16,8 @@ Il est concu pour limiter deux problemes frequents :
 ## Regles du cadre
 
 - un fichier = un sujet = une decision ou un mode operatoire ;
-- cible : **80 a 140 lignes** par fichier ;
-- au dela de **180 lignes**, il faut scinder ;
+- cible : **120 lignes** par fichier (acceptable jusqu'a 140) ;
+- au dela de **180 lignes**, split obligatoire ;
 - chaque sous-sujet important doit etre reference depuis `CONTEXT-INDEX.yaml` ;
 - chaque tache IA doit partir d'un **task pack** court, pas d'un dossier entier.
 

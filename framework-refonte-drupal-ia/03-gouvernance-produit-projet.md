@@ -126,13 +126,11 @@ Une fonctionnalite est terminee si :
 
 ## Registre de decisions
 
-Toute decision structurante doit devenir un ADR court :
+Toute decision structurante doit devenir un ADR court.
 
-- Drupal Commerce ou non ;
-- Layout Builder seul ou non ;
-- CRM interne ou externe ;
-- strategie analytics ;
-- strategie consentement.
+Decisions deja prises : voir `decisions/` (Commerce, scaffold DDEV, Layout Builder, modele reservation, meteo...).
+
+Decisions encore ouvertes a ce stade : CRM interne ou externe, strategie analytics, strategie consentement.
 
 ## Regle de clarification
 

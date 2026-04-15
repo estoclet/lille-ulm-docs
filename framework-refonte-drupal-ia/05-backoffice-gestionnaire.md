@@ -132,37 +132,11 @@ La documentation gestionnaire ne doit pas vivre seulement hors du site.
 
 Elle doit etre :
 
-- integree dans le back-office Drupal ;
+- integree dans le back-office Drupal (page d'aide, aides contextuelles, liens "comment faire") ;
 - accessible depuis les ecrans utiles ;
 - maintenue a jour en permanence avec le produit reel ;
-- redigee en langage simple, sans jargon Drupal.
+- redigee en langage simple, sans jargon Drupal (expliquer ou cliquer, quoi verifier apres une action).
 
-Si une aide back-office doit exister des le premier deploiement, elle peut faire partie du **seed content initial**.
+Si une aide doit exister des le premier deploiement, elle fait partie du **seed content initial** : courte, stable, identique entre environnements, sans code custom si possible.
 
-Dans ce cas, elle doit rester :
-
-- courte ;
-- stable ;
-- identique entre environnements ;
-- gerable sans code custom si possible.
-
-## Regles de redaction
-
-La documentation visible par le gestionnaire doit :
-
-- expliquer ou cliquer ;
-- expliquer ce que l'on voit a l'ecran ;
-- expliquer quoi verifier apres une action ;
-- eviter tout vocabulaire technique inutile ;
-- ne jamais supposer que le gestionnaire connait Drupal.
-
-## Format recommande
-
-Preferer une documentation courte et embarquee :
-
-- page d'aide d'accueil ;
-- aides contextuelles sur les ecrans importants ;
-- liens "comment faire" depuis les vues critiques ;
-- captures et formulations metier si cela aide vraiment.
-
-Le projet doit d'abord rechercher un mecanisme core/contrib adapte avant toute documentation admin custom.
+Le projet doit d'abord rechercher un mecanisme core/contrib adapte (voir ADR-006) avant toute documentation admin custom.

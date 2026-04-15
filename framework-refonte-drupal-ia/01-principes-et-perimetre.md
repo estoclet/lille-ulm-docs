@@ -23,8 +23,8 @@ Le site cible n'est pas un simple site vitrine. Il doit etre pense comme :
 
 Le socle cible est :
 
-- **Drupal 11** si possible ;
-- **Drupal Commerce** si la vente en ligne reste dans le perimetre ;
+- **Drupal 11** (decision prise — ADR-003) ;
+- **Drupal Commerce** en perimetre sobre (decision prise — ADR-001) ;
 - **Layout Builder + UI Suite + SDC** comme base de modularite des pages.
 
 ## Principe cle

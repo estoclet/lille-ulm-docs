@@ -1,5 +1,9 @@
 # Feature brief - Nom
 
+## Statut
+
+draft | cadrage en cours | cadrage termine | en build
+
 ## Issue GitHub liee
 
 ## But
