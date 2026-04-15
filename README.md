@@ -2,6 +2,12 @@
 
 Depot de documentation, cadrage et pilotage pour la refonte Lille ULM.
 
+## Repos du projet
+
+- repo documentaire : `lille-ulm-docs`
+- repo applicatif : `lille-ulm-drupal-app`
+- details de checkout et URL Git : `framework-refonte-drupal-ia/00-initialisation-projet.md`
+
 ## Contenu
 
 - rapports sur l'existant Joomla ;

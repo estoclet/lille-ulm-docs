@@ -20,6 +20,12 @@ Sources detaillees a considerer comme base d'observation :
 - `../refonte-site/05-dette-technique-et-risques.md`
 - `../refonte-site/13-matrice-refonte-pages.md`
 
+## Repos du projet
+
+- repo documentaire : `lille-ulm-docs` - `git@github.com:estoclet/lille-ulm-docs.git`
+- repo applicatif : `lille-ulm-drupal-app` - `git@github.com:estoclet/lille-ulm-drupal-app.git`
+- disposition locale attendue : repo applicatif voisin du repo docs, accessible via `../lille-ulm-drupal-app/`
+
 ## Faits de depart
 
 - le site source est un Joomla 3 ancien ;

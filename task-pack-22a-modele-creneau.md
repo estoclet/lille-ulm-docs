@@ -21,6 +21,13 @@ implementation
 - framework-refonte-drupal-ia/decisions/ADR-016-modele-minimal-reservation-de-creneau.md
 - framework-refonte-drupal-ia/decisions/ADR-010-modele-commerce-minimal.md
 
+## Repo cible
+
+Repo applicatif attendu : `../lille-ulm-drupal-app/` depuis ce repo docs
+(voir `README.md` et `framework-refonte-drupal-ia/00-initialisation-projet.md`).
+Codex doit etre lance depuis la racine de ce depot.
+Les fichiers ADR (sources de verite) se trouvent dans ce repo documentaire.
+
 ## Objectif
 
 Implementer la structure de donnees minimale permettant :
