@@ -104,6 +104,9 @@ documents:
   - file: briefs/feature-brief-parcours-offres-vente.md
     role: feature-brief
     tags: [offers, sales, conversion, commerce]
+  - file: briefs/feature-brief-meteo-aide-decision.md
+    role: feature-brief
+    tags: [meteo, booking, reschedule, gestionnaire]
   - file: pages/page-spec-nos-offres.md
     role: page-spec
     tags: [offers, landing, conversion, editorial]
