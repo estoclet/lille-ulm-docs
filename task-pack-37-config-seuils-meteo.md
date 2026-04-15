@@ -1,8 +1,7 @@
 # Agent task pack - Formulaire de configuration des seuils meteo
 
 ## Statut
-
-ready
+done
 
 ## Agent cible
 
