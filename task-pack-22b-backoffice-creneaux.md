@@ -1,7 +1,7 @@
 # Agent task pack - Interface gestionnaire creneaux et report
 
 ## Statut
-ready
+review
 
 ## Agent cible
 
@@ -37,7 +37,8 @@ Ce pack suppose que le modele de donnees du pack 22a est deja en place (entite c
 - vue d'administration listant les creneaux (ouverts, fermes, reserves) avec filtres date et statut ;
 - formulaire de creation et d'edition d'un creneau par le gestionnaire (date/heure, capacite, statut) ;
 - action de report : le gestionnaire peut deplacer la date/heure d'une reservation confirmee, sans perdre le lien avec la commande ni l'acheteur ;
-- notification ou log minimal lors d'un report (a minima une trace consultable) ;
+- email automatique simple a l'acheteur lors d'un report : date initiale, nouvelle date, prestation concernee, contact gestionnaire ; aucune confirmation de l'acheteur requise ;
+- log minimal du report consultable par le gestionnaire (date du report, ancienne date, nouvelle date) ;
 - permissions distinctes : le gestionnaire peut gerer les creneaux, l'acheteur ne peut pas modifier sa reservation directement.
 
 ## Pre-requis
@@ -63,7 +64,8 @@ L'entite creneau, les champs de ligne de commande et la logique de verrou doiven
 - Drupal 11 + DDEV, theme admin Gin ;
 - l'interface doit rester utilisable par un gestionnaire debutant (pas d'ecran surcharge) ;
 - le report ne doit pas casser le lien entre la reservation et la commande ;
-- la meteo n'est pas integree dans ce pack : elle reste une aide manuelle a la decision de report ;
+- la meteo n'est pas integree dans ce pack : elle reste une aide manuelle a la decision de report (voir ADR-017) ;
+- l'email de report est declenche par l'action gestionnaire, jamais automatiquement par le site ;
 - ne pas implementer d'interface publique cote acheteur dans ce pack ;
 - s'appuyer sur les vues et formulaires Drupal standard avant de partir sur du custom.
 
@@ -73,6 +75,7 @@ L'entite creneau, les champs de ligne de commande et la logique de verrou doiven
 - le gestionnaire peut fermer un creneau et verifier qu'il n'est plus selectionnable a l'achat ;
 - le gestionnaire peut reporter une reservation confirmee vers un autre creneau disponible ;
 - le lien commande / reservation reste intact apres le report ;
+- l'acheteur recoit un email lors d'un report (verifiable en environnement de test DDEV) ;
 - un utilisateur sans role gestionnaire ne peut pas modifier les creneaux.
 
 ## Definition de fin
@@ -83,5 +86,5 @@ L'interface est disponible dans DDEV, les cas de la section "Verification attend
 
 1. faits confirmes : briques Drupal reutilisees (Views, Form API, permissions)
 2. propositions : ecrans, routes, actions implementes
-3. questions ouvertes : arbitrages non couverts par les ADR (ex. notification acheteur lors d'un report)
+3. questions ouvertes : arbitrages non couverts par les ADR (ex. gabarit exact de l'email de report)
 4. fichiers modifies : liste des fichiers crees ou modifies dans le repo applicatif
