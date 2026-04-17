@@ -109,9 +109,14 @@ Chaque page doit etre modifiable par :
 - edition des CTA ;
 - sans ouvrir 12 formulaires differents.
 
-Exemple prioritaire : le bloc hero de la home doit exposer dans un seul formulaire
-le titre, le sous-titre, l'image, le CTA principal et le CTA secondaire, sans champs
-techniques parasites visibles pour le gestionnaire.
+Exemples prioritaires :
+
+- le bloc hero de la home doit exposer dans un seul formulaire le titre, le
+  sous-titre, l'image, le CTA principal et le CTA secondaire ;
+- le bandeau contact doit exposer l'accroche, les horaires, le numero tel: et le
+  numero affiche ;
+- dans les deux cas, les champs techniques parasites ne doivent pas etre visibles
+  pour le gestionnaire.
 
 ## Regles de simplification
 
