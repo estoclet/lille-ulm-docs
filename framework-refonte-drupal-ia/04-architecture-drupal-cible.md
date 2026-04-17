@@ -1,17 +1,18 @@
 # Architecture Drupal cible
 
-## Socle recommande
+## Socle retenu (état au 2026-04-17)
 
 - Drupal 11
 - environnement local : **DDEV**
-- Theme admin : **Gin**
-- Navigation admin : **Admin Toolbar**
+- Thème admin : **Gin** + Admin Toolbar
+- Thème front : **Radix 6.x** (base Bootstrap 5) + sous-thème `lille_ulm_theme`
+- Composition éditoriale : **Layout Builder** + **SDC** (ADR-007, ADR-019)
 - Edition media : Media Library
 - Workflows : Content Moderation + Workflows
 - SEO : Metatag + Pathauto + Redirect + Simple XML Sitemap
 - Formulaires : Webform
-- Consentement / cookies : module dedie conforme RGPD
-- Analytics : solution sobre et compatible consentement, idealement Matomo
+- Consentement / cookies : module dédié conforme RGPD
+- Analytics : solution sobre et compatible consentement, idéalement Matomo
 
 ## Regle d'environnement local
 
@@ -79,22 +80,24 @@ Si Commerce est retenu :
 - tableaux de bord commandes / paiements / statuts
 - logique metier "bon cadeau" explicitement specifiee
 
-## Modules contrib a considerer
+## Modules contrib retenus
 
-| Besoin | Piste |
-| --- | --- |
-| Admin intuitif | Gin, Admin Toolbar |
-| Pages modulaires | Layout Builder, UI Suite |
-| Composants coherents | SDC, composants thematiques |
-| Formulaires | Webform |
-| Automatisations | ECA |
-| SEO | Metatag, Pathauto, Redirect, Simple XML Sitemap |
-| Recherche interne | Search API si besoin reel |
-| Consentement | module cookies / consentement adapte au RGPD |
-| Analytics respectueux | Matomo |
-| Seed content initial | Default Content si besoin reel et borne |
-| Aide back-office integree | mecanisme core/contrib dedie avant custom |
-| Controle terrain / scan | ticketing contrib a evaluer avant custom |
+| Besoin | Module | Version |
+| --- | --- | --- |
+| Admin intuitif | gin, admin_toolbar | en place |
+| Thème front | radix | ^6 |
+| Composants Bootstrap SDC | ui_suite_bootstrap | 5.2.0 |
+| Styles sections Layout Builder | layout_builder_styles | ^2 |
+| Restriction palette blocs | layout_builder_restrictions | ^3 |
+| Templates de sections | section_library | ^2 |
+| Formulaires | webform | en place |
+| Commerce | drupal/commerce | en place |
+| SEO | metatag, pathauto, redirect | à installer |
+| Automatisations | ECA | à évaluer |
+| Consentement | module RGPD dédié | à choisir |
+| Analytics | Matomo | à installer |
+
+`gin_lb` est **exclu** : incompatible Drupal 11 + gin_toolbar 3.x.
 
 ## Doctrine seed content
 
