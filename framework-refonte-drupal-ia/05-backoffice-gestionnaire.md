@@ -123,6 +123,15 @@ Ce compte sert a :
 - verifier le vocabulaire du back-office ;
 - controler que la documentation embarquee correspond aux permissions reelles.
 
+La recette UX/UI du back-office ne doit pas se limiter a une verification
+fonctionnelle. Chaque page destinee au gestionnaire doit etre relue sur
+screenshots :
+
+- en desktop ;
+- en mobile ;
+- avec une attention specifique a la lisibilite, a la hierarchie visuelle et a la
+  clarte des actions.
+
 ## Principes UX admin
 
 1. un menu court ;
@@ -130,6 +139,21 @@ Ce compte sert a :
 3. des formulaires ranges par logique humaine ;
 4. des aides contextuelles breves ;
 5. des tableaux de bord orientes action.
+
+## Socle initial livre
+
+Premier niveau concret a maintenir dans le produit :
+
+- un tableau de bord `gestionnaire` sous `/admin/lille-ulm` ;
+- trois entrees de lecture simples : `Contenus`, `Commerce`, `Pilotage` ;
+- des liens utiles vers pages et contenus, medias, aide, commandes, offres,
+  creneaux, meteo, formulaires ;
+- un role `gestionnaire` qui peut acceder a ces ecrans sans basculer en profil
+  administrateur technique.
+
+Ce socle est volontairement court. Chaque nouvelle fonctionnalite doit ensuite
+ajouter son propre point d'entree utile dans ce tableau de bord ou dans la
+navigation admin existante, sans casser les reperes deja appris.
 
 ## Ecrans quotidiens a prevoir
 
