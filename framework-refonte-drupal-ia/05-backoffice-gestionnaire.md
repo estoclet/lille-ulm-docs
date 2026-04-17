@@ -267,6 +267,13 @@ Ordre de correction recommande apres cet audit :
 4. refaire une passe de captures mobiles sur le contenu reel des pages, menu
    referme.
 
+Les trois blocages techniques du premier audit ont deja ete leves :
+
+- la liste des creneaux s'affiche de nouveau ;
+- l'ecran meteo ne remonte plus de warnings ;
+- la creation d'offre remarche apres remise en place d'un store par defaut et
+  des droits de lecture minimaux sur le store.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
