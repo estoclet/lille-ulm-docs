@@ -236,15 +236,14 @@ peut reperer rapidement ses entrees utiles sans comprendre Drupal.
 
 Les premiers irritants UX/UI visibles sont toutefois deja clairs :
 
-- le header global garde un libelle `Back to Administration` qui replonge dans un
-  vocabulaire Drupal generique au lieu de rester 100 % Lille ULM ;
 - en mobile, les captures prises avec la navigation ouverte montrent qu'il faut
   aussi verifier chaque ecran en etat `contenu visible`, pas seulement en etat
   `menu ouvert` ;
 - plusieurs listes Commerce restent trop brutes pour un gestionnaire non
   drupaliste : le nettoyage des actions locales natives a deja supprime
-  `Commerce inbox`, `Add product` et `Create a new order`, mais il reste des
-  colonnes et statuts en anglais ;
+  `Commerce inbox`, `Add product` et `Create a new order`, puis les listes
+  Produits et Commandes ont ete relabellisees en francais avec un repere de
+  retour `Retour au back-office Lille ULM` ;
 - la creation et l'edition d'une page restent tres pauvres visuellement : peu de
   labels visibles, peu de guidage, impression de formulaire vide ;
 - le hero est deja beaucoup plus simple qu'avant, mais garde des indices
