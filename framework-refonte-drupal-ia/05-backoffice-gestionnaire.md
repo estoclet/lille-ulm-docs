@@ -151,6 +151,12 @@ Pour le role `gestionnaire`, la navigation `Lille ULM` doit devenir l'entree
 principale en toolbar. Une entree generique de type `Administration` ne doit pas
 venir concurrencer ce repere metier.
 
+Par coherence, les points d'entree Drupal generiques doivent eux aussi retomber
+sur les reperes Lille ULM quand ils concernent le gestionnaire :
+
+- `/admin` doit renvoyer vers le tableau de bord Lille ULM ;
+- `/admin/help` doit renvoyer vers l'aide metier Lille ULM.
+
 Les autres onglets toolbar doivent etre reduits au strict necessaire :
 
 - `Retour au site` ;

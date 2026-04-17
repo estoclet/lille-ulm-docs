@@ -27,7 +27,8 @@ La base retenue est :
 - permission `access help pages` accordee au role `gestionnaire` ;
 - bloc d'aide contextuelle deja present dans l'admin Gin ;
 - page d'aide metier accessible via `/admin/lille-ulm/aide` ;
-- possibilite de conserver `/admin/help` comme socle technique si utile.
+- redirection de `/admin/help` vers cette aide metier pour eviter une entree
+  Drupal generique concurrente.
 
 Le projet ne retient pas, a ce stade, de module contrib d'aide plus riche tant qu'un besoin concret ne le justifie pas.
 
