@@ -18,6 +18,15 @@ from typing import Iterable
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 FRAMEWORK_ROOT = Path(__file__).resolve().parent
+
+# Charge les variables du fichier .env a la racine du depot si present.
+_dotenv = REPO_ROOT / ".env"
+if _dotenv.exists():
+    for _line in _dotenv.read_text(encoding="utf-8").splitlines():
+        _line = _line.strip()
+        if _line and not _line.startswith("#") and "=" in _line:
+            _key, _, _val = _line.partition("=")
+            os.environ.setdefault(_key.strip(), _val.strip())
 STATE_ROOT = FRAMEWORK_ROOT / ".orchestrator-state"
 RUNS_ROOT = STATE_ROOT / "runs"
 ISSUE_STATUS_LABELS = {"todo", "in-progress", "blocked"}
@@ -490,8 +499,10 @@ def run_dispatch(args: argparse.Namespace) -> int:
         update_status_in_file(task_pack, "blocked")
         metadata["final_status"] = "blocked"
         metadata["timeout"] = args.timeout
-        (run_dir / "stdout.txt").write_text(exc.stdout or "", encoding="utf-8")
-        (run_dir / "stderr.txt").write_text(exc.stderr or "", encoding="utf-8")
+        stdout = exc.stdout if isinstance(exc.stdout, str) else (exc.stdout or b"").decode("utf-8", errors="replace")
+        stderr = exc.stderr if isinstance(exc.stderr, str) else (exc.stderr or b"").decode("utf-8", errors="replace")
+        (run_dir / "stdout.txt").write_text(stdout, encoding="utf-8")
+        (run_dir / "stderr.txt").write_text(stderr, encoding="utf-8")
         (run_dir / "metadata.json").write_text(
             json.dumps(metadata, indent=2, ensure_ascii=True) + "\n",
             encoding="utf-8",
