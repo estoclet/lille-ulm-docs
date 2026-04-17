@@ -40,7 +40,8 @@ comprend ce qu'il va vivre, et achete ou reserve en confiance.
 - nous appeler pour cette offre.
 
 Les libelles visibles cote public restent en francais et orientes usage.
-Exclure tout libelle technique brut de type `Add to cart`.
+Cela inclut les CTA, placeholders et libelles de calcul visibles.
+Exclure tout libelle technique brut de type `Add to cart` ou `Subtotal`.
 
 ## Champs modifiables par le gestionnaire
 

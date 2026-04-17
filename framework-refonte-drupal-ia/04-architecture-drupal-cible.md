@@ -25,6 +25,11 @@ Le developpement local doit etre pense **DDEV-first** :
 
 Le projet ne doit pas dependre d'une installation locale artisanale propre a un seul poste.
 
+## Regle de langue
+
+Le site public et le back-office gestionnaire sont exploites en **francais uniquement**.
+Ne pas maintenir d'architecture multilingue active tant qu'un besoin metier explicite ne l'impose pas.
+
 ## Composition editoriale
 
 ### Choix principal
