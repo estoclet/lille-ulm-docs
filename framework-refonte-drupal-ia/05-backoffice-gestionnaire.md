@@ -182,6 +182,28 @@ Ce socle est volontairement court. Chaque nouvelle fonctionnalite doit ensuite
 ajouter son propre point d'entree utile dans ce tableau de bord ou dans la
 navigation admin existante, sans casser les reperes deja appris.
 
+## Perimetre d'audit UX/UI gestionnaire
+
+Quand le lot back-office sera considere comme suffisamment stabilise, l'audit
+UX/UI devra couvrir au minimum, en desktop et en mobile :
+
+- le tableau de bord `/admin/lille-ulm` ;
+- la toolbar finale visible par le role `gestionnaire` ;
+- la liste `Pages et contenus` ;
+- la creation et l'edition d'une page ;
+- l'edition des blocs cles (hero, bandeau contact) ;
+- la liste des commandes ;
+- la liste des offres, la creation d'une offre et l'edition d'une offre ;
+- la liste des creneaux ;
+- l'ecran meteo ;
+- la liste des medias et l'ajout d'un media ;
+- la liste des formulaires ;
+- la page d'aide accessible au gestionnaire.
+
+L'objectif n'est pas seulement de verifier que chaque page est accessible, mais
+de confirmer que le gestionnaire comprend quoi faire sans connaissance Drupal
+prealable.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
