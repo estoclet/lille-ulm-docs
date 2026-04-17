@@ -242,7 +242,9 @@ Les premiers irritants UX/UI visibles sont toutefois deja clairs :
   aussi verifier chaque ecran en etat `contenu visible`, pas seulement en etat
   `menu ouvert` ;
 - plusieurs listes Commerce restent trop brutes pour un gestionnaire non
-  drupaliste : `Commerce inbox`, `Add product`, colonnes et statuts en anglais ;
+  drupaliste : le nettoyage des actions locales natives a deja supprime
+  `Commerce inbox`, `Add product` et `Create a new order`, mais il reste des
+  colonnes et statuts en anglais ;
 - la creation et l'edition d'une page restent tres pauvres visuellement : peu de
   labels visibles, peu de guidage, impression de formulaire vide ;
 - le hero est deja beaucoup plus simple qu'avant, mais garde des indices
