@@ -150,6 +150,8 @@ Premier niveau concret a maintenir dans le produit :
 - une entree `Blocs cles` avec acces direct au hero de la home et au bandeau
   contact ;
 - trois entrees de lecture simples : `Contenus`, `Commerce`, `Pilotage` ;
+- une entree `Offres actives` avec acces direct aux offres publiees actuellement
+  vendues en ligne ;
 - des liens utiles vers pages et contenus, medias, aide, commandes, offres,
   creneaux, meteo, formulaires ;
 - un role `gestionnaire` qui peut acceder a ces ecrans sans basculer en profil
