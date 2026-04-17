@@ -247,11 +247,12 @@ Les premiers irritants UX/UI visibles sont toutefois deja clairs :
 - la creation et l'edition d'une page ont deja ete resserrees autour de
   l'essentiel avec un repere Lille ULM, moins de sections techniques et un
   historique interne replie, mais le rendu reste encore tres minimaliste ;
-- le hero est deja beaucoup plus simple qu'avant, mais garde des indices
-  techniques inutiles au gestionnaire, notamment les champs d'URL bruts et le
-  flux media encore peu rassurant ;
-- l'ajout de media est exploitable, mais demande un etiquetage plus explicite
-  pour rassurer sur ce qu'il faut remplir.
+- le hero a encore des champs de lien assez techniques, mais il est maintenant
+  resserre autour du titre, du sous-titre, de l'image de fond, des deux CTA et
+  d'un historique interne simplifie ;
+- l'ajout de media a ete nettoye autour du fichier a importer et de la
+  publication, avec un repere Lille ULM et sans les sections auteur/version
+  inutiles au gestionnaire.
 
 Trois blocages critiques sont deja observes dans ce premier audit :
 
