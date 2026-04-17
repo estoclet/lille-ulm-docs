@@ -140,11 +140,19 @@ screenshots :
 4. des aides contextuelles breves ;
 5. des tableaux de bord orientes action.
 
+La toolbar doit raconter la meme histoire que le tableau de bord :
+
+- memes mots ;
+- memes points d'entree utiles ;
+- pas de proliferation de rubriques Drupal natives incomprehensibles pour le
+  gestionnaire.
+
 ## Socle initial livre
 
 Premier niveau concret a maintenir dans le produit :
 
 - un tableau de bord `gestionnaire` sous `/admin/lille-ulm` ;
+- une entree toolbar `Lille ULM` coherente avec ce tableau de bord ;
 - une entree `Pages cles` avec acces direct a l'accueil, au contact, a la page
   localisation, a la FAQ et a la galerie ;
 - une entree `Blocs cles` avec acces direct au hero de la home et au bandeau
