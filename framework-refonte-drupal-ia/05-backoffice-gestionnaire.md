@@ -151,6 +151,13 @@ Pour le role `gestionnaire`, la navigation `Lille ULM` doit devenir l'entree
 principale en toolbar. Une entree generique de type `Administration` ne doit pas
 venir concurrencer ce repere metier.
 
+Les autres onglets toolbar doivent etre reduits au strict necessaire :
+
+- `Retour au site` ;
+- le menu de compte utilisateur ;
+- aucun autre onglet natif Drupal ou Commerce si son sens n'est pas evident pour
+  le gestionnaire.
+
 ## Socle initial livre
 
 Premier niveau concret a maintenir dans le produit :
