@@ -145,6 +145,8 @@ screenshots :
 Premier niveau concret a maintenir dans le produit :
 
 - un tableau de bord `gestionnaire` sous `/admin/lille-ulm` ;
+- une entree `Pages cles` avec acces direct a l'accueil, au contact, a la page
+  localisation, a la FAQ et a la galerie ;
 - trois entrees de lecture simples : `Contenus`, `Commerce`, `Pilotage` ;
 - des liens utiles vers pages et contenus, medias, aide, commandes, offres,
   creneaux, meteo, formulaires ;
