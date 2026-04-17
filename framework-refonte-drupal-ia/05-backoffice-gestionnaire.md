@@ -147,12 +147,18 @@ La toolbar doit raconter la meme histoire que le tableau de bord :
 - pas de proliferation de rubriques Drupal natives incomprehensibles pour le
   gestionnaire.
 
+Pour le role `gestionnaire`, la navigation `Lille ULM` doit devenir l'entree
+principale en toolbar. Une entree generique de type `Administration` ne doit pas
+venir concurrencer ce repere metier.
+
 ## Socle initial livre
 
 Premier niveau concret a maintenir dans le produit :
 
 - un tableau de bord `gestionnaire` sous `/admin/lille-ulm` ;
 - une entree toolbar `Lille ULM` coherente avec ce tableau de bord ;
+- une entree `Actions rapides` pour creer une page, une offre ou un media sans
+  passer par les listes Drupal ;
 - une entree `Pages cles` avec acces direct a l'accueil, au contact, a la page
   localisation, a la FAQ et a la galerie ;
 - une entree `Blocs cles` avec acces direct au hero de la home et au bandeau
