@@ -1,8 +1,7 @@
 # Agent task pack - Reprise des bons DT Register 2023-2024 dans Drupal Commerce
 
 ## Statut
-
-ready
+done
 
 ## Agent cible
 

@@ -1,8 +1,7 @@
 # Agent task pack - Redirections SEO depuis les URLs Joomla
 
 ## Statut
-
-ready
+done
 
 ## Agent cible
 

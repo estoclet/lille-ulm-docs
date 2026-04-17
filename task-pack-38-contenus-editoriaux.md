@@ -1,7 +1,7 @@
 # Agent task pack - Migration contenus editoriaux Joomla vers Drupal
 
 ## Statut
-ready
+done
 
 ## Agent cible
 
