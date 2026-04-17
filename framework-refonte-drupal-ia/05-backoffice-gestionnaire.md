@@ -210,6 +210,23 @@ L'objectif n'est pas seulement de verifier que chaque page est accessible, mais
 de confirmer que le gestionnaire comprend quoi faire sans connaissance Drupal
 prealable.
 
+Avant de lancer l'audit complet, il faut verrouiller deux prealables :
+
+- verifier que chaque surface cible est bien accessible au role `gestionnaire` ;
+- valider une chaine de captures desktop et mobile sur des ecrans reels.
+
+Le socle minimum verifie a ce stade couvre deja :
+
+- tableau de bord et aide Lille ULM ;
+- liste des contenus, creation de page et edition de page ;
+- edition des blocs cles ;
+- listes commandes, offres, creneaux, medias et formulaires ;
+- creation d'offre, ajout de media et ecran meteo.
+
+La chaine de capture locale a deja ete validee sur le tableau de bord et sur la
+page d'aide, en desktop et en mobile. Le reste de l'audit doit reutiliser cette
+meme logique de preuve visuelle.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
