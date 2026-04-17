@@ -128,11 +128,13 @@ Chaque nouvelle fonctionnalite doit suivre cet ordre :
 
 1. verifier si le core Drupal couvre deja le besoin ;
 2. rechercher un module contrib mature et maintenu ;
-3. ne considerer un petit custom borne qu'en absence d'autre solution viable.
+3. considerer une couche low-code Drupal si le contrib seul ne suffit pas ;
+4. ne considerer un petit custom borne qu'en absence d'autre solution viable.
 
 Le code custom doit rester **l'exception**, pas la norme.
 
-Un besoin ne doit pas partir en implementation tant que la recherche core / contrib n'a pas ete faite et consignée.
+Un besoin ne doit pas partir en implementation tant que la recherche core / contrib /
+low-code n'a pas ete faite et consignee.
 
 Un gros custom n'est jamais acceptable si un contrib stable suffit.
 

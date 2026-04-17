@@ -2,12 +2,14 @@
 
 ## Objectif
 
-Le gestionnaire n'est pas un technicien. Le back-office doit donc etre :
+Le gestionnaire n'est pas un technicien et ne connait pas Drupal. Le back-office
+doit donc etre :
 
 - guide ;
 - propre ;
 - rassurant ;
 - limite aux actions utiles.
+- comprehensible sans formation Drupal.
 
 ## Principe
 
@@ -19,6 +21,47 @@ Le gestionnaire ne doit pas voir "Drupal brut". Il doit voir :
 - ses clients ;
 - ses formulaires ;
 - ses taches du jour.
+
+Le back-office gestionnaire ne doit pas se reduire a une seule page de type
+`/admin/content`. Un usage quotidien e-commerce demande plusieurs points d'entree
+simples, orientes action et accessibles sans connaissances Drupal.
+
+## Architecture modulaire
+
+Le back-office doit etre compose de briques activables et extensibles au fil des
+fonctionnalites :
+
+- socle de navigation admin clair ;
+- tableau de bord d'accueil ;
+- ecrans metier par domaine : contenus, medias, commandes, clients, formulaires,
+  meteo, creneaux ;
+- widgets ou raccourcis ajoutables sans refonte globale.
+
+Regle :
+
+1. ajouter un ecran utile quand une nouvelle fonctionnalite apparait ;
+2. reutiliser d'abord core + contrib ;
+3. accepter une couche low-code si le contrib seul ne suffit pas ;
+4. garder une navigation stable meme quand le perimetre grandit ;
+5. eviter un back-office monolithique ou une page unique surchargee.
+
+## Socle contrib a privilegier
+
+Base deja coherente dans ce projet :
+
+- Gin pour l'interface admin ;
+- Admin Toolbar pour une navigation courte et rapide ;
+- Media Library pour les medias ;
+- Webform pour les formulaires ;
+- Drupal Commerce pour les ecrans commandes / produits / clients.
+
+Pistes contrib a investiguer prioritairement selon le besoin reel :
+
+- un tableau de bord admin composable a partir de blocs et de Views ;
+- un module de dashboard commerce si sa compatibilite et sa maintenance sont solides ;
+- Views Bulk Operations pour les actions de masse simples ;
+- Workbench Access seulement si la segmentation des acces editoriaux devient
+  necessaire.
 
 ## Roles cibles
 
