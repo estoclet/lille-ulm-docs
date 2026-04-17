@@ -1,7 +1,7 @@
 # Agent task pack - Import medias Joomla dans le Media Drupal
 
 ## Statut
-running
+review
 
 ## Agent cible
 
@@ -60,6 +60,12 @@ Images a exclure :
 
 - refonte-site/08-medias-et-assets.md
 - framework-refonte-drupal-ia/decisions/ADR-013-reprise-selective-des-donnees-joomla.md
+
+## Fichiers cibles a produire ou modifier
+
+- ../lille-ulm-drupal-app/web/modules/custom/lille_ulm_media_import/
+- ../lille-ulm-drupal-app/web/modules/custom/lille_ulm_media_import/src/
+- ../lille-ulm-drupal-app/web/modules/custom/lille_ulm_media_import/README.md
 
 ## Fichiers a ne pas toucher
 

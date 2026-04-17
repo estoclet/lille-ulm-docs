@@ -1,4 +1,7 @@
 .DS_Store
+.env
 .claude/settings.local.json
 .claude/scheduled_tasks.lock
+__pycache__/
+framework-refonte-drupal-ia/__pycache__/
 framework-refonte-drupal-ia/.orchestrator-state/

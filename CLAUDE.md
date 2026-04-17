@@ -51,10 +51,11 @@ Le pack doit contenir au minimum :
 4. une issue liee ;
 5. une ou plusieurs sources de verite ;
 6. des fichiers a lire ;
-7. un livrable attendu ;
-8. des contraintes ;
-9. une verification attendue ;
-10. une definition de fin.
+7. des fichiers cibles a produire ou modifier ;
+8. un livrable attendu ;
+9. des contraintes ;
+10. une verification attendue ;
+11. une definition de fin.
 
 Template :
 
@@ -96,7 +97,10 @@ Synchroniser l'issue :
 
 Quand Claude travaille sur un sujet, la sortie doit separer :
 
-1. faits confirms ;
-2. propositions ;
-3. questions ouvertes ;
-4. fichiers modifies ou a produire.
+1. `## faits observes`
+2. `## propositions`
+3. `## decisions a prendre`
+4. `## risques`
+5. `## fichiers modifies ou a produire`
+
+La premiere ligne non vide doit etre `## faits observes`.

@@ -5,12 +5,15 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import filecmp
 import json
 import os
 import re
 import shlex
+import shutil
 import subprocess
 import sys
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
@@ -27,11 +30,22 @@ if _dotenv.exists():
         if _line and not _line.startswith("#") and "=" in _line:
             _key, _, _val = _line.partition("=")
             os.environ.setdefault(_key.strip(), _val.strip())
+
+ORCH_PREFIX = "LILLE_ULM_ORCH_"
 STATE_ROOT = FRAMEWORK_ROOT / ".orchestrator-state"
 RUNS_ROOT = STATE_ROOT / "runs"
+FRAMEWORK_STATE_RELATIVE = str(STATE_ROOT.relative_to(REPO_ROOT)).replace("\\", "/")
 ISSUE_STATUS_LABELS = {"todo", "in-progress", "blocked"}
 TASK_PACK_STATUSES = {"draft", "ready", "running", "review", "done", "blocked"}
 ALLOWED_AGENTS = {"claude", "codex", "copilot"}
+REQUIRED_OUTPUT_HEADINGS = [
+    "## faits observes",
+    "## propositions",
+    "## decisions a prendre",
+    "## risques",
+    "## fichiers modifies ou a produire",
+]
+IGNORED_RUNTIME_DIRS = {".git", FRAMEWORK_STATE_RELATIVE}
 REQUIRED_SECTIONS = {
     "statut",
     "agent cible",
@@ -41,6 +55,7 @@ REQUIRED_SECTIONS = {
     "objectif",
     "livrable attendu",
     "fichiers a lire",
+    "fichiers cibles a produire ou modifier",
     "fichiers a ne pas toucher",
     "contraintes",
     "verification attendue",
@@ -146,20 +161,33 @@ def parse_list(content: str) -> list[str]:
     return items
 
 
-def resolve_repo_path(task_pack: TaskPack, value: str) -> Path | None:
+def resolve_repo_path(
+    task_pack: TaskPack,
+    value: str,
+    *,
+    must_exist: bool = True,
+) -> Path | None:
     candidate = Path(value)
     if candidate.is_absolute():
-        return candidate if candidate.exists() else None
+        resolved = candidate.resolve()
+        return resolved if not must_exist or resolved.exists() else None
 
     root_relative = (REPO_ROOT / candidate).resolve()
+    pack_relative = (task_pack.path.parent / candidate).resolve()
+    if must_exist:
+        if root_relative.exists():
+            return root_relative
+        if pack_relative.exists():
+            return pack_relative
+        return None
+
     if root_relative.exists():
         return root_relative
-
-    pack_relative = (task_pack.path.parent / candidate).resolve()
     if pack_relative.exists():
         return pack_relative
-
-    return None
+    if value.startswith(("./", "../")):
+        return pack_relative
+    return root_relative
 
 
 def path_label(path: Path) -> str:
@@ -168,6 +196,14 @@ def path_label(path: Path) -> str:
         return str(resolved.relative_to(REPO_ROOT))
     except ValueError:
         return str(resolved)
+
+
+def repo_relative_label(path: Path) -> str | None:
+    resolved = path.resolve()
+    try:
+        return str(resolved.relative_to(REPO_ROOT))
+    except ValueError:
+        return None
 
 
 def extract_issue_number(issue_ref: str) -> str | None:
@@ -227,16 +263,29 @@ def validate_task_pack(task_pack: TaskPack) -> tuple[list[str], list[str]]:
 
     source_files = parse_list(task_pack.get("source de verite"))
     read_files = parse_list(task_pack.get("fichiers a lire"))
+    target_files = parse_list(task_pack.get("fichiers cibles a produire ou modifier"))
     untouched_files = parse_list(task_pack.get("fichiers a ne pas toucher"))
 
     if not source_files:
         errors.append("At least one source of truth is required")
     if not read_files:
         errors.append("At least one file to read is required")
+    if task_pack.work_type.lower() == "implementation" and not target_files:
+        errors.append(
+            "Section 'Fichiers cibles a produire ou modifier' must list at least one target for implementation work"
+        )
+    elif task_pack.work_type.lower() in {"cadrage", "audit", "revue"} and not target_files:
+        warnings.append(
+            "No target files listed; add them if this task is expected to update existing framework docs"
+        )
 
     if len(read_files) > 8:
         warnings.append(
             f"{len(read_files)} files to read listed; split the task pack if possible"
+        )
+    if len(target_files) > 8:
+        warnings.append(
+            f"{len(target_files)} target files listed; split the task pack if possible"
         )
     if len(source_files) > 3:
         warnings.append(
@@ -274,6 +323,7 @@ def validate_task_pack(task_pack: TaskPack) -> tuple[list[str], list[str]]:
 def build_handoff(task_pack: TaskPack) -> str:
     source_files = parse_list(task_pack.get("source de verite"))
     read_files = parse_list(task_pack.get("fichiers a lire"))
+    target_files = parse_list(task_pack.get("fichiers cibles a produire ou modifier"))
     untouched_files = parse_list(task_pack.get("fichiers a ne pas toucher"))
 
     def block(title: str, content: str | Iterable[str]) -> str:
@@ -294,7 +344,7 @@ def build_handoff(task_pack: TaskPack) -> str:
         "Regles anti-derive obligatoires :",
         "- N'invente rien silencieusement. Marque explicitement : fait observe | hypothese | decision a prendre | risque.",
         "- Si une ambiguite n'est pas resolue par les sources de verite listees : marque-la 'decision a prendre' et stoppe sur ce point. Ne tranche pas a la place de l'humain.",
-        "- Ne cree pas de nouveau fichier source de verite (ADR, brief, page spec). Si tu juges qu'un ADR est necessaire, signale-le dans 'questions ouvertes' sans le rediger.",
+        "- Ne cree pas de nouvelle source de verite non demandee. Tu peux modifier ou produire un ADR, un feature brief, une page spec ou un task pack seulement si cela fait explicitement partie du livrable attendu ou des fichiers cibles de la tache.",
         "- Ne touche pas aux fichiers listes dans 'Fichiers a ne pas toucher', meme pour corriger une coquille.",
         "- Le perimetre de ce pack est ferme. Toute extension de perimetre doit etre signalee comme 'decision a prendre', pas implementee.",
         "",
@@ -305,6 +355,8 @@ def build_handoff(task_pack: TaskPack) -> str:
         block("Sources de verite", source_files),
         "",
         block("Fichiers a lire", read_files),
+        "",
+        block("Fichiers cibles a produire ou modifier", target_files),
         "",
         block("Fichiers a ne pas toucher", untouched_files),
         "",
@@ -319,10 +371,11 @@ def build_handoff(task_pack: TaskPack) -> str:
         block("Definition de fin", task_pack.get("definition de fin")),
         "",
         "Format de sortie obligatoire",
-        "1. faits confirms",
-        "2. propositions",
-        "3. questions ouvertes",
-        "4. fichiers modifies",
+        "La premiere ligne non vide DOIT etre `## faits observes`.",
+        "Reponds exactement avec les titres markdown suivants, dans cet ordre :",
+        *REQUIRED_OUTPUT_HEADINGS,
+        "N'ajoute pas de titre alternatif ni de section intermediaire hors de ces 5 blocs.",
+        "Toute sortie qui ajoute du texte avant `## faits observes` est invalide.",
         "",
         block("Sortie courte a produire", task_pack.get("sortie courte a produire")),
     ]
@@ -363,6 +416,180 @@ def latest_run_for_pack(task_pack: TaskPack) -> Path | None:
         if payload.get("task_pack") == path_label(task_pack.path):
             matching.append(candidate)
     return matching[-1] if matching else None
+
+
+def validate_agent_output(stdout: str) -> list[str]:
+    errors: list[str] = []
+    non_empty_lines = [line.strip() for line in stdout.splitlines() if line.strip()]
+
+    if not non_empty_lines:
+        return ["Agent output is empty"]
+
+    if non_empty_lines[0] != REQUIRED_OUTPUT_HEADINGS[0]:
+        errors.append(
+            "First non-empty line must be "
+            f"'{REQUIRED_OUTPUT_HEADINGS[0]}', got '{non_empty_lines[0]}'"
+        )
+
+    observed_headings = [line for line in non_empty_lines if line.startswith("## ")]
+    if observed_headings != REQUIRED_OUTPUT_HEADINGS:
+        errors.append(
+            "Output headings must exactly match the required sequence: "
+            + " | ".join(REQUIRED_OUTPUT_HEADINGS)
+        )
+        if observed_headings:
+            errors.append("Observed headings: " + " | ".join(observed_headings))
+        else:
+            errors.append("Observed headings: none")
+
+    return errors
+
+
+def should_ignore_runtime_path(relative_path: str) -> bool:
+    normalized = relative_path.replace("\\", "/")
+    if normalized.startswith("./"):
+        normalized = normalized[2:]
+    normalized = normalized.rstrip("/")
+    if not normalized:
+        return False
+    parts = normalized.split("/")
+    if "__pycache__" in parts:
+        return True
+    return any(
+        normalized == ignored or normalized.startswith(f"{ignored}/")
+        for ignored in IGNORED_RUNTIME_DIRS
+    )
+
+
+def iter_repo_files(root: Path) -> dict[str, Path]:
+    files: dict[str, Path] = {}
+    for current_root, dirnames, filenames in os.walk(root):
+        current_path = Path(current_root)
+        relative_root = current_path.relative_to(root)
+        normalized_root = (
+            ""
+            if str(relative_root) == "."
+            else relative_root.as_posix()
+        )
+
+        kept_dirs: list[str] = []
+        for dirname in dirnames:
+            relative_dir = "/".join(filter(None, [normalized_root, dirname]))
+            if not should_ignore_runtime_path(relative_dir):
+                kept_dirs.append(dirname)
+        dirnames[:] = kept_dirs
+
+        for filename in filenames:
+            relative_file = "/".join(filter(None, [normalized_root, filename]))
+            if should_ignore_runtime_path(relative_file):
+                continue
+            files[relative_file] = current_path / filename
+    return files
+
+
+def collect_workspace_changes(reference_root: Path, workspace_root: Path) -> dict[str, list[str]]:
+    reference_files = iter_repo_files(reference_root)
+    workspace_files = iter_repo_files(workspace_root)
+    added: list[str] = []
+    modified: list[str] = []
+    deleted: list[str] = []
+
+    for relative_path in sorted(set(reference_files) | set(workspace_files)):
+        reference_file = reference_files.get(relative_path)
+        workspace_file = workspace_files.get(relative_path)
+        if reference_file is None:
+            added.append(relative_path)
+        elif workspace_file is None:
+            deleted.append(relative_path)
+        elif not filecmp.cmp(reference_file, workspace_file, shallow=False):
+            modified.append(relative_path)
+
+    return {
+        "added": added,
+        "modified": modified,
+        "deleted": deleted,
+    }
+
+
+def persist_workspace_changes(
+    run_dir: Path,
+    workspace_root: Path,
+    changes: dict[str, list[str]],
+) -> None:
+    if not any(changes.values()):
+        return
+
+    changes_root = run_dir / "changes"
+    for relative_path in changes["added"] + changes["modified"]:
+        source = workspace_root / relative_path
+        destination = changes_root / relative_path
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+
+    summary = run_dir / "changes-summary.json"
+    summary.write_text(
+        json.dumps(changes, indent=2, ensure_ascii=True) + "\n",
+        encoding="utf-8",
+    )
+
+
+def build_isolated_workspace() -> str:
+    workspace_dir = tempfile.mkdtemp(prefix="ia-orch-dispatch-")
+    shutil.copytree(
+        REPO_ROOT,
+        workspace_dir,
+        dirs_exist_ok=True,
+        ignore=shutil.ignore_patterns(
+            ".git",
+            ".orchestrator-state",
+            "__pycache__",
+        ),
+    )
+    if (REPO_ROOT / ".git").exists():
+        subprocess.run(
+            ["git", "init", "-q", "-b", "main"],
+            cwd=workspace_dir,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        subprocess.run(
+            ["git", "add", "-A"],
+            cwd=workspace_dir,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        subprocess.run(
+            [
+                "git",
+                "-c",
+                "user.name=IA Orchestrator",
+                "-c",
+                "user.email=ia-orchestrator@example.invalid",
+                "commit",
+                "-q",
+                "-m",
+                "dispatch workspace snapshot",
+            ],
+            cwd=workspace_dir,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    return workspace_dir
+
+
+def target_file_labels(task_pack: TaskPack) -> set[str]:
+    labels: set[str] = set()
+    for value in parse_list(task_pack.get("fichiers cibles a produire ou modifier")):
+        resolved = resolve_repo_path(task_pack, value, must_exist=False)
+        if resolved is None:
+            continue
+        relative_label = repo_relative_label(resolved)
+        if relative_label is not None:
+            labels.add(relative_label)
+    return labels
 
 
 def build_issue_comment(task_pack: TaskPack) -> str:
@@ -444,11 +671,11 @@ def run_dispatch(args: argparse.Namespace) -> int:
         return 1
 
     handoff = build_handoff(task_pack)
-    command = os.getenv(f"LILLE_ULM_ORCH_{task_pack.agent.upper()}_CMD", "").strip()
+    command = os.getenv(f"{ORCH_PREFIX}{task_pack.agent.upper()}_CMD", "").strip()
     if not args.dry_run and not command:
         print(
             f"ERROR: no command configured for agent '{task_pack.agent}'. "
-            f"Set LILLE_ULM_ORCH_{task_pack.agent.upper()}_CMD or use --dry-run.",
+            f"Set {ORCH_PREFIX}{task_pack.agent.upper()}_CMD or use --dry-run.",
             file=sys.stderr,
         )
         return 1
@@ -482,6 +709,9 @@ def run_dispatch(args: argparse.Namespace) -> int:
         sys.stdout.write(handoff)
         return 0
 
+    workspace_dir = build_isolated_workspace()
+    workspace_root = Path(workspace_dir)
+    workspace_changes = {"added": [], "modified": [], "deleted": []}
     update_status_in_file(task_pack, "running")
     task_pack = parse_markdown_task_pack(task_pack.path)
 
@@ -491,31 +721,67 @@ def run_dispatch(args: argparse.Namespace) -> int:
             input=handoff,
             text=True,
             capture_output=True,
-            cwd=REPO_ROOT,
+            cwd=workspace_root,
             timeout=args.timeout,
             check=False,
         )
     except subprocess.TimeoutExpired as exc:
+        workspace_changes = collect_workspace_changes(REPO_ROOT, workspace_root)
+        persist_workspace_changes(run_dir, workspace_root, workspace_changes)
         update_status_in_file(task_pack, "blocked")
         metadata["final_status"] = "blocked"
         metadata["timeout"] = args.timeout
-        stdout = exc.stdout if isinstance(exc.stdout, str) else (exc.stdout or b"").decode("utf-8", errors="replace")
-        stderr = exc.stderr if isinstance(exc.stderr, str) else (exc.stderr or b"").decode("utf-8", errors="replace")
-        (run_dir / "stdout.txt").write_text(stdout, encoding="utf-8")
-        (run_dir / "stderr.txt").write_text(stderr, encoding="utf-8")
+        metadata["workspace_isolated"] = True
+        metadata["workspace_changes"] = workspace_changes
+        (run_dir / "stdout.txt").write_text(exc.stdout or "", encoding="utf-8")
+        (run_dir / "stderr.txt").write_text(exc.stderr or "", encoding="utf-8")
         (run_dir / "metadata.json").write_text(
             json.dumps(metadata, indent=2, ensure_ascii=True) + "\n",
             encoding="utf-8",
         )
+        shutil.rmtree(workspace_root, ignore_errors=True)
         print(f"ERROR: dispatch timed out after {args.timeout}s", file=sys.stderr)
         return 1
+
+    workspace_changes = collect_workspace_changes(REPO_ROOT, workspace_root)
+    persist_workspace_changes(run_dir, workspace_root, workspace_changes)
+    shutil.rmtree(workspace_root, ignore_errors=True)
 
     (run_dir / "stdout.txt").write_text(completed.stdout, encoding="utf-8")
     (run_dir / "stderr.txt").write_text(completed.stderr, encoding="utf-8")
     metadata["returncode"] = completed.returncode
+    metadata["workspace_isolated"] = True
+    metadata["workspace_changes"] = workspace_changes
+    metadata["workspace_artifacts_dir"] = (
+        str((run_dir / "changes").relative_to(REPO_ROOT))
+        if any(workspace_changes.values())
+        else None
+    )
     if completed.returncode == 0:
-        update_status_in_file(task_pack, "review")
-        metadata["final_status"] = "review"
+        output_errors = validate_agent_output(completed.stdout)
+        metadata["output_validation_errors"] = output_errors
+        allowed_targets = target_file_labels(task_pack)
+        unexpected_changes = sorted(
+            relative_path
+            for relative_path in workspace_changes["added"] + workspace_changes["modified"] + workspace_changes["deleted"]
+            if relative_path not in allowed_targets
+        )
+        metadata["unexpected_workspace_changes"] = unexpected_changes
+        if output_errors or unexpected_changes:
+            update_status_in_file(task_pack, "blocked")
+            metadata["final_status"] = "blocked"
+            if output_errors:
+                for error in output_errors:
+                    print(f"ERROR: invalid agent output -> {error}", file=sys.stderr)
+            if unexpected_changes:
+                print(
+                    "ERROR: dispatch modified files outside target scope -> "
+                    + ", ".join(unexpected_changes),
+                    file=sys.stderr,
+                )
+        else:
+            update_status_in_file(task_pack, "review")
+            metadata["final_status"] = "review"
     else:
         update_status_in_file(task_pack, "blocked")
         metadata["final_status"] = "blocked"
@@ -528,7 +794,11 @@ def run_dispatch(args: argparse.Namespace) -> int:
     sys.stdout.write(completed.stdout)
     if completed.stderr:
         print(completed.stderr, file=sys.stderr, end="")
-    return completed.returncode
+    if completed.returncode != 0:
+        return completed.returncode
+    if metadata["final_status"] != "review":
+        return 1
+    return 0
 
 
 def run_set_status(args: argparse.Namespace) -> int:

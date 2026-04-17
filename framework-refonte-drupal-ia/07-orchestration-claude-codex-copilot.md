@@ -103,16 +103,14 @@ alors il faut 2 a 4 taches, pas une seule.
 
 Une bonne sortie d'agent doit separer :
 
-1. faits confirms ;
-2. propositions ;
-3. questions ouvertes ;
-4. fichiers modifies.
+1. `## faits observes`
+2. `## propositions`
+3. `## decisions a prendre`
+4. `## risques`
+5. `## fichiers modifies ou a produire`
 
-Si une issue existe deja, la sortie doit aussi permettre de mettre a jour :
-
-5. le statut ;
-6. le commentaire de synthese ;
-7. les liens vers les fichiers produits.
+La premiere ligne non vide doit etre `## faits observes`.
+Tout texte ajoute avant ce titre rend la sortie invalide en execution outillee.
 
 ## Passage a l'execution outillee
 
@@ -121,7 +119,9 @@ Quand le framework est utilise avec `orchestrateur.py` :
 - le task pack reste la source d'entree ;
 - le statut de la tache suit `draft -> ready -> running -> review -> done|blocked` ;
 - l'orchestrateur valide le pack avant delegation ;
-- l'issue GitHub peut etre synchronisee depuis ce meme pack.
+- l'issue GitHub peut etre synchronisee depuis ce meme pack ;
+- le run live s'execute dans un workspace jetable ;
+- les changements proposes sont conserves en artefacts de run pour revue.
 
 ## Regle de split documentaire
 

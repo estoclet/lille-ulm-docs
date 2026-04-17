@@ -21,6 +21,7 @@ Depot de documentation, cadrage et pilotage pour la refonte Lille ULM.
 - framework IA : `framework-refonte-drupal-ia/`
 - analyse de l'existant : `refonte-site/`
 - page client : `docs/index.html`
+- fiche operateur : `FICHE-REFLEXE-OPERATEUR-FRAMEWORK.md`
 
 ## Suivi projet
 

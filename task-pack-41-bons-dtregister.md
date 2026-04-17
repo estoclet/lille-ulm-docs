@@ -1,7 +1,7 @@
 # Agent task pack - Reprise des bons DT Register 2023-2024 dans Drupal Commerce
 
 ## Statut
-done
+blocked
 
 ## Agent cible
 
@@ -77,6 +77,12 @@ Vue Drupal (`views`) listant les commandes en statut `draft` avec `field_purchas
 
 - refonte-site/09-reprise-donnees-reservation.md
 - framework-refonte-drupal-ia/decisions/ADR-013-reprise-selective-des-donnees-joomla.md
+
+## Fichiers cibles a produire ou modifier
+
+- ../lille-ulm-drupal-app/scripts/dtregister-export-2023-2024.sql
+- ../lille-ulm-drupal-app/web/modules/custom/lille_ulm_legacy_import/
+- ../lille-ulm-drupal-app/config/sync/views.view.lille_ulm_legacy_bons_a_verifier.yml
 
 ## Fichiers a ne pas toucher
 

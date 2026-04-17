@@ -64,6 +64,14 @@ Le dossier `templates/` contient les gabarits minimaux pour lancer :
 
 Le CLI local `orchestrateur.py` permet ensuite de valider un task pack, generer le handoff et synchroniser son statut avec une issue GitHub.
 
+## Dispatch live
+
+Le `dispatch` live est borne de facon plus stricte :
+
+1. la sortie agent doit commencer par `## faits observes` et respecter les 5 titres imposes ;
+2. l'execution se fait dans un workspace jetable ;
+3. les changements proposes sont conserves dans les artefacts de run, pas appliques directement au depot principal.
+
 ## Initialisation du projet
 
 Le framework embarque des elements minimaux issus de `../refonte-site/` pour eviter de recommencer le cadrage a zero.
