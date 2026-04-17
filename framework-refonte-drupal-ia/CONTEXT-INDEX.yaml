@@ -117,6 +117,9 @@ documents:
   - file: pages/page-spec-contact.md
     role: page-spec
     tags: [contact, lead, reassurance, rgpd]
+  - file: decisions/ADR-018-charte-graphique-et-design-tokens.md
+    role: decision
+    tags: [design, tokens, typography, colors, logo, branding]
   - file: 01-principes-et-perimetre.md
     role: vision
     tags: [vision, scope, drupal, commerce, ux]
@@ -144,6 +147,7 @@ documents:
   - file: 09-gouvernance-ia-friendly.md
     role: governance
     tags: [guardrails, anti-hallucination, source-of-truth, maintenance]
+  - decisions/ADR-018-charte-graphique-et-design-tokens.md
   - file: 10-orchestrateur-v1.md
     role: execution
     tags: [orchestrator, task-pack, workflow, github-issues]
