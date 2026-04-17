@@ -249,6 +249,13 @@ Exemples prioritaires :
 - previsualisation ;
 - documentation courte liee aux pages critiques.
 
+Quand cela aide vraiment un gestionnaire non technicien, cette aide peut aussi
+inclure des captures d'ecran utiles :
+
+- centrees sur les reperes visuels et les actions a faire ;
+- limitees aux ecrans critiques ;
+- relues en version desktop et mobile.
+
 Le choix de la base d'aide integree est documente dans `decisions/ADR-006-aide-gestionnaire-backoffice.md`.
 
 ## Documentation gestionnaire integree

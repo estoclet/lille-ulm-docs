@@ -1,4 +1,4 @@
-# ADR-006 - Demarrer l'aide gestionnaire avec le core Help
+# ADR-006 - Demarrer l'aide gestionnaire avec core Help puis une aide metier legere
 
 ## Contexte
 
@@ -19,20 +19,22 @@ Le socle actuel confirme deja :
 
 ## Decision
 
-Le premier niveau d'aide integree du projet repose sur le **core Help**.
+Le premier niveau d'aide integree du projet repose sur le **core Help**, complete
+desormais par une page d'aide metier legere dans le back-office Lille ULM.
 
 La base retenue est :
 
-- pages d'aide accessibles via `/admin/help` ;
+- permission `access help pages` accordee au role `gestionnaire` ;
 - bloc d'aide contextuelle deja present dans l'admin Gin ;
-- permission `access help pages` accordee au role `gestionnaire`.
+- page d'aide metier accessible via `/admin/lille-ulm/aide` ;
+- possibilite de conserver `/admin/help` comme socle technique si utile.
 
 Le projet ne retient pas, a ce stade, de module contrib d'aide plus riche tant qu'un besoin concret ne le justifie pas.
 
 ## Pourquoi ce choix
 
-- solution deja presente et verifiee ;
-- aucun custom requis ;
+- solution d'abord appuyee sur le core deja present et verifie ;
+- faible custom borne a une page d'aide metier simple ;
 - faible cout de maintenance ;
 - compatible avec l'objectif de langage simple et d'aide embarquee progressive ;
 - laisse la porte ouverte a un contrib plus riche plus tard si les limites deviennent reelles.
@@ -40,6 +42,7 @@ Le projet ne retient pas, a ce stade, de module contrib d'aide plus riche tant q
 ## Ce que cela couvre
 
 - un point d'entree d'aide visible dans l'administration ;
+- une page d'aide Lille ULM en vocabulaire metier ;
 - une base contextuelle sur les ecrans admin couverts par le core ou les modules actifs ;
 - un premier niveau d'autonomie pour le gestionnaire.
 
@@ -56,3 +59,5 @@ Ces besoins devront d'abord faire l'objet d'une nouvelle recherche core/contrib 
 - le role `gestionnaire` doit garder l'acces aux pages d'aide ;
 - le helper local d'installation doit reproduire ce droit ;
 - les futures aides metier pourront etre ajoutees par couches successives sans changer la doctrine de base.
+- des captures d'ecran ciblees peuvent enrichir cette aide si elles montrent des
+  reperes visuels ou des actions utiles, sans remplacer la clarte du texte.
