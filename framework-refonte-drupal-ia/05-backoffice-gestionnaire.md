@@ -244,8 +244,9 @@ Les premiers irritants UX/UI visibles sont toutefois deja clairs :
   `Commerce inbox`, `Add product` et `Create a new order`, puis les listes
   Produits et Commandes ont ete relabellisees en francais avec un repere de
   retour `Retour au back-office Lille ULM` ;
-- la creation et l'edition d'une page restent tres pauvres visuellement : peu de
-  labels visibles, peu de guidage, impression de formulaire vide ;
+- la creation et l'edition d'une page ont deja ete resserrees autour de
+  l'essentiel avec un repere Lille ULM, moins de sections techniques et un
+  historique interne replie, mais le rendu reste encore tres minimaliste ;
 - le hero est deja beaucoup plus simple qu'avant, mais garde des indices
   techniques inutiles au gestionnaire, notamment les champs d'URL bruts et le
   flux media encore peu rassurant ;
