@@ -45,6 +45,8 @@ Faire de `Nos offres` la page commerciale centrale du site et le point d'entree 
 - H1 unique ;
 - metadata specifiques a la page ;
 - URL propre et stable.
+- l'URL canonique `/offres` doit rester le point d'entree commercial principal,
+  sans redirection ni page editoriale concurrente sur ce meme chemin.
 
 ## Contraintes accessibilite
 
