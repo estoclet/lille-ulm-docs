@@ -227,6 +227,46 @@ La chaine de capture locale a deja ete validee sur le tableau de bord et sur la
 page d'aide, en desktop et en mobile. Le reste de l'audit doit reutiliser cette
 meme logique de preuve visuelle.
 
+## Constats du premier audit visuel
+
+Les captures desktop et mobile montrent que le socle Lille ULM devient lisible
+sur le tableau de bord, l'aide, les listes de contenus, les medias et le bandeau
+contact. La logique par cartes et liens directs fonctionne, et le gestionnaire
+peut reperer rapidement ses entrees utiles sans comprendre Drupal.
+
+Les premiers irritants UX/UI visibles sont toutefois deja clairs :
+
+- le header global garde un libelle `Back to Administration` qui replonge dans un
+  vocabulaire Drupal generique au lieu de rester 100 % Lille ULM ;
+- en mobile, les captures prises avec la navigation ouverte montrent qu'il faut
+  aussi verifier chaque ecran en etat `contenu visible`, pas seulement en etat
+  `menu ouvert` ;
+- plusieurs listes Commerce restent trop brutes pour un gestionnaire non
+  drupaliste : `Commerce inbox`, `Add product`, colonnes et statuts en anglais ;
+- la creation et l'edition d'une page restent tres pauvres visuellement : peu de
+  labels visibles, peu de guidage, impression de formulaire vide ;
+- le hero est deja beaucoup plus simple qu'avant, mais garde des indices
+  techniques inutiles au gestionnaire, notamment les champs d'URL bruts et le
+  flux media encore peu rassurant ;
+- l'ajout de media est exploitable, mais demande un etiquetage plus explicite
+  pour rassurer sur ce qu'il faut remplir.
+
+Trois blocages critiques sont deja observes dans ce premier audit :
+
+- creation d'offre impossible car Commerce affiche `Products can't be created
+  until a store has been added` ;
+- liste des creneaux en erreur fatale `Object of class Drupal\\Core\\Url could not
+  be converted to string` ;
+- ecran meteo pollue par des warnings `Array to string conversion`.
+
+Ordre de correction recommande apres cet audit :
+
+1. corriger tous les ecrans en erreur ou bloques ;
+2. retirer les libelles anglais et les reperes Drupal/Commerce inutiles ;
+3. ajouter du guidage metier sur les formulaires encore trop nus ;
+4. refaire une passe de captures mobiles sur le contenu reel des pages, menu
+   referme.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
