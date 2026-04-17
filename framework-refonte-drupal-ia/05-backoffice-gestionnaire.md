@@ -269,6 +269,12 @@ Elle doit etre :
 - maintenue a jour en permanence avec le produit reel ;
 - redigee en langage simple, sans jargon Drupal (expliquer ou cliquer, quoi verifier apres une action).
 
+Quand une page d'aide integree existe, elle doit rester courte mais actionnable :
+
+- quelques reperes de lecture ;
+- des liens directs vers les ecrans utiles ;
+- pas de documentation longue qui remplace la clarte de l'interface.
+
 Si une aide doit exister des le premier deploiement, elle fait partie du **seed content initial** : courte, stable, identique entre environnements, sans code custom si possible.
 
 Le projet doit d'abord rechercher un mecanisme core/contrib adapte (voir ADR-006) avant toute documentation admin custom.
