@@ -332,6 +332,16 @@ Une quatrieme passe devient ensuite pertinente sur les formulaires :
 - cette couche est particulierement utile sur l'edition de page, le hero et les
   medias, qui restaient encore visuellement tres plats.
 
+Le tableau de bord et l'aide meritent aussi un soin visuel propre, car ils
+donnent le ton de tout le back-office :
+
+- leurs sections peuvent porter un sous-repere court et une ambiance plus
+  marquee selon la famille d'action ;
+- cela evite l'effet "grille uniforme" et aide a distinguer plus vite ce qui
+  releve de l'edition, du commerce, du pilotage ou des acces rapides ;
+- ce traitement est pertinent tant que le rendu reste sobre et ne concurrence
+  pas la lisibilite des liens.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
