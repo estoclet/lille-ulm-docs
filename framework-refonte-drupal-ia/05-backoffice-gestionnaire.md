@@ -398,6 +398,19 @@ Depuis cet audit cible, une passe corrective a ete ajoutee sur les pages node :
   les bandeaux d'introduction, les barres d'actions, le dashboard et le tray
   toolbar.
 
+Une passe equivalente est aussi devenue necessaire sur les formulaires d'offre
+Commerce (`/product/add/default`, `/product/*/edit`) :
+
+- l'ajout ne doit plus remonter comme `Ajouter product` ;
+- l'edition doit assumer une lecture metier `Modifier l offre ...` ;
+- les champs clefs doivent ressortir visiblement (`Nom de l offre`, `Duree`,
+  `Phrase de reassurance`, `Ordre d affichage`, `Description de l offre`) ;
+- la meta secondaire Commerce ne doit pas concurrencer la lecture principale ;
+- l'aide CKEditor et les formats de texte doivent etre reformules comme sur les
+  pages node (`Edition standard`, `Edition avancee`) ;
+- les ecrans d'offre doivent toujours porter la tonalite visuelle `Commerce`,
+  y compris en edition, sans retomber par erreur dans la famille `Contenus`.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
