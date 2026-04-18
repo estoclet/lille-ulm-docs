@@ -323,6 +323,15 @@ Une troisieme passe visuelle peut maintenant etre consideree comme engagee :
 - les listes du quotidien paraissent moins ternes des qu'on assume cette
   logique de sections visuelles plutot qu'un admin monochrome.
 
+Une quatrieme passe devient ensuite pertinente sur les formulaires :
+
+- les ecrans d'edition ne doivent plus donner l'impression d'un empilement brut
+  de champs ;
+- les blocs de formulaire, les zones repliables et les barres d'actions peuvent
+  prendre un rendu plus editorial et plus doux sans nuire a la lecture ;
+- cette couche est particulierement utile sur l'edition de page, le hero et les
+  medias, qui restaient encore visuellement tres plats.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
