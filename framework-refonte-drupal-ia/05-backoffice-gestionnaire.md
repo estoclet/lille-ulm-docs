@@ -164,6 +164,15 @@ Les autres onglets toolbar doivent etre reduits au strict necessaire :
 - aucun autre onglet natif Drupal ou Commerce si son sens n'est pas evident pour
   le gestionnaire.
 
+En pratique, cela implique deux regles de rendu :
+
+- le tray `Lille ULM` doit reprendre les memes rubriques que le tableau de bord
+  (`Actions rapides`, `Pages cles`, `Blocs cles`, `Contenus`, `Commerce`,
+  `Pilotage`) ;
+- l'aside `Admin Toolbar` natif doit etre masque pour le role `gestionnaire`,
+  sinon il reintroduit des entrees Drupal/Commerce concurrentes et parfois en
+  anglais.
+
 ## Socle initial livre
 
 Premier niveau concret a maintenir dans le produit :
@@ -244,6 +253,10 @@ Les premiers irritants UX/UI visibles sont toutefois deja clairs :
   `Commerce inbox`, `Add product` et `Create a new order`, puis les listes
   Produits et Commandes ont ete relabellisees en francais avec un repere de
   retour `Retour au back-office Lille ULM` ;
+- la navigation restait encore incoherente tant que le tray Lille ULM et
+  l'`Admin Toolbar` natif racontaient deux histoires differentes ; le tray doit
+  donc reprendre les memes rubriques que le tableau de bord et le menu natif
+  etre neutralise pour le gestionnaire ;
 - la creation et l'edition d'une page ont deja ete resserrees autour de
   l'essentiel avec un repere Lille ULM, moins de sections techniques et un
   historique interne replie, mais le rendu reste encore tres minimaliste ;
@@ -252,7 +265,10 @@ Les premiers irritants UX/UI visibles sont toutefois deja clairs :
   d'un historique interne simplifie ;
 - l'ajout de media a ete nettoye autour du fichier a importer et de la
   publication, avec un repere Lille ULM et sans les sections auteur/version
-  inutiles au gestionnaire.
+  inutiles au gestionnaire ;
+- meme quand les parcours deviennent clairs, le back-office reste trop triste
+  et sans ame si on laisse Gin brut : il faut une couche visuelle plus
+  chaleureuse sur les titres, reperes de retour, cartes et aides contextuelles.
 
 Trois blocages critiques sont deja observes dans ce premier audit :
 
@@ -267,7 +283,9 @@ Ordre de correction recommande apres cet audit :
 1. corriger tous les ecrans en erreur ou bloques ;
 2. retirer les libelles anglais et les reperes Drupal/Commerce inutiles ;
 3. ajouter du guidage metier sur les formulaires encore trop nus ;
-4. refaire une passe de captures mobiles sur le contenu reel des pages, menu
+4. donner une identite visuelle plus chaleureuse aux ecrans gestionnaire sans
+   casser Gin ;
+5. refaire une passe de captures mobiles sur le contenu reel des pages, menu
    referme.
 
 Les trois blocages techniques du premier audit ont deja ete leves :
@@ -276,6 +294,15 @@ Les trois blocages techniques du premier audit ont deja ete leves :
 - l'ecran meteo ne remonte plus de warnings ;
 - la creation d'offre remarche apres remise en place d'un store par defaut et
   des droits de lecture minimaux sur le store.
+
+Depuis, une passe de coherence navigation + apparence a aussi ete ajoutee :
+
+- le tray `Lille ULM` reprend maintenant les memes familles d'actions que le
+  tableau de bord ;
+- l'`Admin Toolbar` natif est masque pour le role `gestionnaire` ;
+- une premiere couche visuelle rend les pages moins froides : fond admin plus
+  doux, header/breadcrumb plus incarnes, cartes Lille ULM plus vivantes et
+  aides contextuelles mieux mises en valeur.
 
 ## Ecrans quotidiens a prevoir
 
