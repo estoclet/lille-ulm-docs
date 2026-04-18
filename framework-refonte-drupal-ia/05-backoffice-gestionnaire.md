@@ -411,6 +411,20 @@ Commerce (`/product/add/default`, `/product/*/edit`) :
 - les ecrans d'offre doivent toujours porter la tonalite visuelle `Commerce`,
   y compris en edition, sans retomber par erreur dans la famille `Contenus`.
 
+Une passe du meme ordre reste utile sur la liste des commandes
+(`entity.commerce_order.collection`) :
+
+- les filtres ne doivent pas rester comme des champs nus sans repere visible ;
+- l'action de masse doit etre compréhensible sans vocabulaire Drupal/Commerce
+  anglais (`Supprimer la commande`, `Debloquer la commande`) ;
+- le bouton de ligne principal gagne a etre lu comme une action claire
+  (`Ouvrir`) plutot qu'un verbe generique ;
+- les etats de commande meritent un rendu immediatement scannable avec une
+  pastille et une couleur, pas seulement du texte dans une cellule ;
+- la colonne client doit aider a distinguer vite le nom et l'email ;
+- en mobile, filtres et actions de masse doivent se replier en pile sans
+  casser la lecture du tableau.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
