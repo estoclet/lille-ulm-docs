@@ -314,6 +314,15 @@ quotidien :
 - chaque bandeau rappelle le sens de la page et propose des raccourcis utiles
   plutot qu'un simple titre technique.
 
+Une troisieme passe visuelle peut maintenant etre consideree comme engagee :
+
+- chaque grande famille de pages peut recevoir une ambiance plus distincte
+  (`Contenus`, `Commerce`, `Media`, `Pilotage`) au lieu d'un rendu uniforme ;
+- les titres, bandeaux et tableaux gagnent en relief avec des accents de couleur
+  coherents par domaine ;
+- les listes du quotidien paraissent moins ternes des qu'on assume cette
+  logique de sections visuelles plutot qu'un admin monochrome.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
