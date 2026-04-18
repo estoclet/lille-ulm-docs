@@ -425,6 +425,21 @@ Une passe du meme ordre reste utile sur la liste des commandes
 - en mobile, filtres et actions de masse doivent se replier en pile sans
   casser la lecture du tableau.
 
+La liste des creneaux (`entity.lille_ulm_reservation_slot.collection`) demande
+elle aussi une lecture metier explicite :
+
+- le titre de page ne doit pas remonter comme `Entites Creneaux de reservation` ;
+- les filtres doivent etre lisibles sans supposer la connaissance du formulaire
+  (`Statut`, `Du`, `Au`) ;
+- l'action principale de ligne peut rester `Modifier`, mais le split button doit
+  annoncer clairement `Plus d actions` ;
+- les statuts de creneau gagnent a etre scannables avec une pastille simple
+  (`Ouvert`, `Reserve`, `Ferme`) ;
+- l'historique des reports ne doit pas dupliquer la date en anglais et en
+  francais dans la meme cellule ;
+- en mobile, les filtres doivent se replier en pile propre plutot qu'en ligne
+  compacte et fragile.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
