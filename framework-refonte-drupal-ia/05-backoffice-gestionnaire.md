@@ -381,6 +381,23 @@ Conclusion de cet audit cible :
 - mais les pages node n'ont pas encore le niveau de finition visuelle d'une
   interface editoriale vraiment premium et rassurante.
 
+Depuis cet audit cible, une passe corrective a ete ajoutee sur les pages node :
+
+- les titres `Basic page` ont ete nettoyes cote rendu pour ne plus remonter dans
+  les pages d'ajout et d'edition ;
+- les formulaires page affichent maintenant des reperes visibles
+  `Titre de la page`, `Contenu principal` et `Mode d edition`, meme quand le
+  theme admin ne rend pas correctement les labels Drupal ;
+- `Modifier le resume` disparait de l'ecran gestionnaire ;
+- `Basic HTML` et `Full HTML` sont reformules en `Edition standard` et
+  `Edition avancee`, avec une aide plus douce ;
+- le bouton `Apercu` retombe visuellement en secondaire ;
+- l'editeur principal prend un rendu plus editorial, moins brut et mieux
+  hierarchise ;
+- la meme passe inclut enfin un vrai resserrement mobile sur les formulaires,
+  les bandeaux d'introduction, les barres d'actions, le dashboard et le tray
+  toolbar.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
