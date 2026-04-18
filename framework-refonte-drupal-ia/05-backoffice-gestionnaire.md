@@ -342,6 +342,45 @@ donnent le ton de tout le back-office :
 - ce traitement est pertinent tant que le rendu reste sobre et ne concurrence
   pas la lisibilite des liens.
 
+### Audit cible des pages d'edition de node
+
+Les captures et le HTML rendu sur `node/add/page` et `node/10/edit` montrent
+que la base UX s'est nettement assainie :
+
+- intro contextuelle claire ;
+- repere Lille ULM court et utile ;
+- historique interne replie ;
+- zone d'actions ramenee a `Enregistrer` et `Apercu`.
+
+Mais l'UI des formulaires node garde encore plusieurs faiblesses visibles :
+
+- le champ titre sort sans vrai libelle visible et repose surtout sur son
+  placeholder ; sur une page vide ou chargee vite, cela affaiblit la hierarchie
+  visuelle du formulaire ;
+- le corps principal garde une UI de CKEditor tres dominante ; la barre
+  d'outils, le select `Basic HTML` et le lien `A propos des formats de texte`
+  prennent encore trop de place par rapport au geste editorial attendu d'un
+  gestionnaire ;
+- le champ `Contenu principal` n'apparait pas comme un bloc editorial fort : il
+  est precede d'un wrapper technique de resume et d'un libelle parasite
+  `Modifier le resume`, ce qui brouille la lecture ;
+- la creation et l'edition tombent tres vite sur une pile verticale de cartes
+  semblables ; le rendu est plus joli qu'avant, mais la progression visuelle
+  reste monotone quand on descend dans la page ;
+- les actions `Enregistrer` et `Apercu` ont encore un poids graphique trop
+  proche ; l'action principale ressort mieux qu'avant mais l'oeil ne comprend pas
+  encore instantanement quelle action clot normalement le parcours ;
+- sur petit ecran, l'intro, le repere et l'editeur produisent encore une
+  longue colonne avant d'atteindre la barre d'actions, ce qui fatigue la lecture
+  du formulaire.
+
+Conclusion de cet audit cible :
+
+- l'UX de fond est correcte ;
+- l'UI a ete assainie ;
+- mais les pages node n'ont pas encore le niveau de finition visuelle d'une
+  interface editoriale vraiment premium et rassurante.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
