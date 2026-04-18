@@ -398,6 +398,17 @@ Depuis cet audit cible, une passe corrective a ete ajoutee sur les pages node :
   les bandeaux d'introduction, les barres d'actions, le dashboard et le tray
   toolbar.
 
+Une passe complementaire est desormais utile sur les pages publiques les plus
+strategiques, en particulier quand elles sont editees via `node/*/edit` :
+
+- l'intro de `/node/4/edit` (`Nous trouver`) ne doit plus rester sur un message
+  generique de type `Mettre a jour une page visible sur le site` ;
+- les pages cles gagnent a expliciter leur role editorial (`nous trouver`,
+  `nous contacter`, `faq`, `galerie`, accueil) pour remettre le gestionnaire
+  dans une logique metier plutot que dans une logique de type de contenu ;
+- ces intros peuvent aussi proposer un ou deux raccourcis voisins coherents,
+  par exemple vers la page contact ou le tableau de bord.
+
 Une passe equivalente est aussi devenue necessaire sur les formulaires d'offre
 Commerce (`/product/add/default`, `/product/*/edit`) :
 
