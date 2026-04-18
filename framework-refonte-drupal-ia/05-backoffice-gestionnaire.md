@@ -304,6 +304,16 @@ Depuis, une passe de coherence navigation + apparence a aussi ete ajoutee :
   doux, header/breadcrumb plus incarnes, cartes Lille ULM plus vivantes et
   aides contextuelles mieux mises en valeur.
 
+Une deuxieme passe visuelle commence aussi a donner plus d'ame aux ecrans du
+quotidien :
+
+- des bandeaux d'introduction contextualises apparaissent en tete des pages
+  clefs ;
+- ces bandeaux redonnent un ton editorial simple a des ecrans auparavant tres
+  froids, comme les Offres ou l'ajout de media ;
+- chaque bandeau rappelle le sens de la page et propose des raccourcis utiles
+  plutot qu'un simple titre technique.
+
 ## Ecrans quotidiens a prevoir
 
 - tableau de bord du jour
