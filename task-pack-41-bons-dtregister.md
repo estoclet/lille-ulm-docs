@@ -1,7 +1,7 @@
 # Agent task pack - Reprise des bons DT Register 2023-2024 dans Drupal Commerce
 
 ## Statut
-blocked
+done
 
 ## Agent cible
 
@@ -23,6 +23,20 @@ migration
 ## Pre-requis
 
 - Les types de commande et champs Commerce existent dans l'app (issues #14-#17 terminees).
+- Les variations Commerce ont les SKUs : `BAT-15MIN`, `BAT-30MIN`, `INIT-45MIN`, `INIT-1H`, `INIT-1H30`, `COURS-6X40`.
+
+## Deblocage effectue (2026-04-21)
+
+Le mapping `event_variation_map` utilisait des IDs d'entite auto-incrementes (fragiles).
+Remplace par des SKUs stables dans :
+- `config/install/lille_ulm_legacy_import.settings.yml`
+- `config/sync/lille_ulm_legacy_import.settings.yml`
+- `config/schema/lille_ulm_legacy_import.schema.yml` (sequence type : integer → string)
+- `src/Service/LegacyBonImporter.php` (lookup par SKU via `getStorage('commerce_product_variation')->getQuery()->condition('sku', ...)`)
+
+Validation confirmee en DDEV :
+`drush lille-ulm:import-legacy-bons --source=legacy-test.csv --dry-run`
+→ rows_read: 5, rows_eligible: 3, missing_mappings: 0, duplicates: 3, [OK]
 
 ## Objectif
 
