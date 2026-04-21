@@ -123,6 +123,9 @@ documents:
   - file: decisions/ADR-019-architecture-theme-sdc.md
     role: decision
     tags: [theme, radix, sdc, layout-builder, bootstrap, compilation]
+  - file: decisions/ADR-020-gateway-paiement.md
+    role: decision
+    tags: [payment, stripe, paypal, commerce, checkout, production]
   - file: pages/page-spec-home.md
     role: page-spec
     tags: [home, hero, offers, conversion, editorial]
